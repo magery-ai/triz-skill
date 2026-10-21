@@ -82,6 +82,9 @@ If you cannot run scripts, read the files in `data/` directly:
   principle ids separated by `;`.
 - `parameters.json`, `principles.json`: names, definitions, aliases, examples.
 - `separation.json`: separation principles for physical contradictions.
+
+To map software, business or personal terms to the 39 parameters, read
+`guides/domain-mapping.md`.
 - `matrix-status.json`: how far each cell is checked. The matrix is
   cross-checked between two copies but not yet against the book, so say so if
   the user relies on a single cell.
@@ -111,15 +114,15 @@ full plan to `triz-plans/YYYY-MM-DD-<slug>.md` in the user's project using
 `templates/plan-full.md`. If you have no file access, return the full plan in
 the conversation instead.
 
-## Example (illustrative; principles not yet checked against the matrix)
+## Example
 
 > User: Our support team must answer faster, but faster answers are getting sloppier.
 >
 > 1. Intake: IFR = "every customer gets a correct answer at once, with no extra staff."
-> 2. Contradiction: improving speed (25 Loss of time) worsens quality (27 Reliability). User confirms.
-> 3. Directions: #10 Preliminary action, #1 Segmentation, #24 Intermediary.
-> 4. Actions: pre-written answers for the top 20 tickets (#10); split tickets into "instant" and "investigate" queues (#1); a triage bot that gathers details before a human replies (#24).
-> 5. Validation: "Who would object?" -> senior agents fear canned replies. Answer: agents edit templates weekly.
+> 2. Contradiction: improving reply speed worsens answer quality. User confirms.
+> 3. Directions: speed maps to 25 Loss of time or 39 Productivity, quality to 27 Reliability. `--merge 25:27 39:27` ranks #10 Preliminary action first, then #1 Segmentation.
+> 4. Actions: pre-written answers for the top 20 ticket types (#10); split tickets into "instant" and "investigate" queues (#1).
+> 5. Validation: "Who would object?" -> senior agents fear canned replies. Answer: each senior owns and reviews five templates.
 > 6. Short plan in chat, full plan saved to `triz-plans/2026-10-21-support-speed-vs-quality.md`.
 
 More worked examples live in `examples/`.
