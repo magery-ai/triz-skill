@@ -86,8 +86,8 @@ If you cannot run scripts, read the files in `data/` directly:
 To map software, business or personal terms to the 39 parameters, read
 `guides/domain-mapping.md`.
 - `matrix-status.json`: how far each cell is checked. The matrix is
-  cross-checked between two copies but not yet against the book, so say so if
-  the user relies on a single cell.
+  cross-checked between three copies but not yet against the book. For a
+  "disputed" cell, give both values from `matrix-discrepancies.md`.
 
 ## State block
 

@@ -5,8 +5,8 @@
     "default_status": "cross-checked",
     "statuses": {
       "verified": "Checked against the primary source, Altshuller's 40 Principles (Shulyak and Rodman translation, 1997).",
-      "cross-checked": "Two copies agree, but the cell has not been checked against the book yet.",
-      "disputed": "The copies disagree; see matrix-discrepancies.md. The CSV holds the triz40.com value until the book settles it.",
+      "cross-checked": "triz40.com and the pytriz copy agree, and the 1973 Altshuller Foundation table agrees on the principles. Not checked against the book.",
+      "disputed": "The 1973 Altshuller Foundation table differs from the other two copies; see matrix-discrepancies.md. The CSV holds the triz40.com value until the book settles it.",
       "unverified": "Only one copy could be read."
     },
     "sources": [
@@ -20,10 +20,46 @@
         "name": "pytriz 0.4.0 (PyPI, MIT) resources/matrix_values.csv, identical to triz-mcp (npm, MIT) data/matrix.json",
         "read": "2026-10-21",
         "role": "Cross-check copy. Its origin is not documented, so it may share an ancestor with triz40.com."
+      },
+      {
+        "name": "G.S. Altshuller Foundation, table of principles for technical contradictions",
+        "url": "https://www.altshuller.ru/triz/technique2.asp",
+        "read": "2026-10-21",
+        "role": "Third copy with a documented origin: Altshuller, Algorithm of Invention (Moscow, 1973), Appendix 1. Transcribed twice; 29 content differences logged as disputed."
       }
     ],
     "primary_source": "Altshuller, G. 40 Principles: TRIZ Keys to Technical Innovation. Translated by L. Shulyak and S. Rodman. Technical Innovation Center, 1997. Not yet checked.",
-    "release_note": "v1.0.0 ships with the two-copy cross-check only. A cell-by-cell check against the book is still open; report a wrong cell with the 'Wrong matrix cell' issue form."
+    "release_note": "v1.0.0 ships with a three-copy cross-check (triz40.com, pytriz, Altshuller Foundation 1973 table). 29 cells are disputed. A cell-by-cell check against the book is still open; report a wrong cell with the 'Wrong matrix cell' issue form."
   },
-  "cells": {}
+  "cells": {
+    "2-29": "disputed",
+    "4-16": "disputed",
+    "5-11": "disputed",
+    "9-1": "disputed",
+    "9-29": "disputed",
+    "12-11": "disputed",
+    "12-19": "disputed",
+    "13-18": "disputed",
+    "14-33": "disputed",
+    "14-36": "disputed",
+    "15-36": "disputed",
+    "17-23": "disputed",
+    "18-22": "disputed",
+    "19-9": "disputed",
+    "21-12": "disputed",
+    "21-23": "disputed",
+    "25-5": "disputed",
+    "26-27": "disputed",
+    "28-31": "disputed",
+    "29-7": "disputed",
+    "29-22": "disputed",
+    "32-4": "disputed",
+    "35-37": "disputed",
+    "35-39": "disputed",
+    "36-10": "disputed",
+    "37-10": "disputed",
+    "37-21": "disputed",
+    "39-30": "disputed",
+    "39-33": "disputed"
+  }
 }

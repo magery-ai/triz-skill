@@ -10,10 +10,12 @@ First release.
   built by `tools/build_zip.py` and attached to each GitHub Release by
   `.github/workflows/release.yml` when a `v*.*.*` tag is pushed.
 - Matrix status: all 1,521 cells agree between triz40.com and a second copy
-  except one logged typo-level difference (19x9). The cells have not been
-  checked against Altshuller's *40 Principles* (Shulyak and Rodman, 1997);
-  `matrix-status.json` says so, and the "Wrong matrix cell" issue form is the
-  way to report a cell.
+  except one logged typo-level difference (19x9). A third copy, the 1973
+  table published by the G.S. Altshuller Foundation, agrees on the principles
+  in 1,492 cells; 29 cells differ and are marked `disputed`, with both values
+  in `matrix-discrepancies.md`. The cells have not been checked against
+  Altshuller's *40 Principles* (Shulyak and Rodman, 1997), and the "Wrong
+  matrix cell" issue form is the way to report a cell.
 - `evals/tests/test_release.py`: marketplace paths and versions, zip layout.
 
 ## 0.4.0 (not released separately)
