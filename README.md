@@ -189,18 +189,18 @@ plan is saved to `triz-plans/YYYY-MM-DD-<slug>.md` in your project.
 ## Results
 
 <p align="center">
-  <img src="assets/eval-results.svg" width="760" alt="Eval results on 13 cases, with the skill against without. Names the root conflict: 13 of 13 against 10 of 13. Case-specific checks: 32 of 33 against 22 of 33. Dated, measurable target: 13 of 13 against 7 of 13. Risk signal with a threshold: 13 of 13 against 6 of 13. Preferred by the blind grader: 11 of 13 against 2 of 13.">
+  <img src="assets/eval-results.svg" width="760" alt="Eval results on 13 cases, three runs per arm, mean over runs. Names the root conflict: with the skill 13 of 13, without 8.3 of 13. Case-specific checks: 32.7 of 33 against 21 of 33. Dated, measurable target: 13 of 13 against 1.3 of 13. Risk signal with a threshold: 13 of 13 against 2 of 13. Preferred by the blind grader: 12.7 of 13 against 0.3 of 13.">
 </p>
 
-We ran all 13 eval cases with and without the skill and had a separate agent
-grade the two conversations blind. With the skill, every plan named the
-conflict, set a dated target and gave a risk threshold, and the grader
-preferred it in 11 of 13 cases. It takes about three more of your replies.
-Both losses were in autonomous mode; after a fix, a blind re-run of the
-autonomous cases preferred the skill in 5 of 5 runs
-([details](evals/results/2026-10-21-autonomous.md)). This is one run per arm
-with simulated users, so read it as a first signal. See the
-[full results and method](evals/results/2026-10-21.md).
+We ran all 13 eval cases three times with the skill and three times without
+it, and had a separate agent grade each pair of conversations blind. With
+the skill, every plan in every run named the conflict, set a dated target
+and gave a risk threshold, and the grader preferred it in 38 of 39
+comparisons. Without it, the core idea was often just as good, but only 4
+of 39 plans had a dated target. The skill takes about five more of your
+replies. These are simulated users and the same model family plays every
+role, so read it as a strong signal, not a benchmark. See the
+[full results and method](evals/results/2026-10-21-multirun.md).
 
 ## FAQ
 
@@ -209,7 +209,7 @@ It knows what TRIZ is, but left alone it tends to trade one side off against
 the other or give a generic list. The skill makes it name the contradiction,
 look up the actual matrix cell, tie each option to your resources and end with
 a plan you can measure. In our evals, plans without the skill had a dated
-target in 7 of 13 cases; with it, 13 of 13. See [Results](#results).
+target in 4 of 39 runs; with it, 39 of 39. See [Results](#results).
 
 **Is it only for engineering?**
 No. A mapping guide translates software, business and personal problems into

@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Evals re-run 3 times per arm, the baseline included (78 conversations,
+  39 blind comparisons). With the skill: 123.3 of 124 items on average and
+  preferred in 38 of 39 comparisons; without: 71 of 124. README Results,
+  chart and `evals/results/2026-10-21-multirun.md` updated.
+
 ## Next
 
 - A cell-by-cell check of the matrix against Altshuller's *40 Principles*

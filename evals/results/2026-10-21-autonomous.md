@@ -1,5 +1,7 @@
 # Autonomous re-run, 2026-10-21
 
+> Superseded by the [multi-run results](2026-10-21-multirun.md) (3 runs per arm).
+
 The [full run](2026-10-21.md) lost both autonomous engineering cases: the
 skill passed every item, but the grader preferred the baseline's deeper
 engineering detail (where the CI minutes go, fixing the slowest tests,
