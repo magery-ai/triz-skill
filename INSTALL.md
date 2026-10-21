@@ -49,6 +49,14 @@ cp -r triz-skill/skills/triz ~/.claude/skills/
 Other agents use their own skills folder; check your agent's documentation
 for where it is.
 
+## Agents without skill support
+
+For agents that read a rules file but can't load skills (Cursor rules,
+GitHub Copilot instructions, Windsurf, Cline, or any `AGENTS.md`), copy
+[`agents/AGENTS.md`](agents/AGENTS.md) into your project, or paste its
+contents into your agent's rules file. It is a compact version of the
+workflow that reads the matrix from this repository.
+
 ## Check that it works
 
 Start a new session and describe a trade-off, for example: *"Our pages need

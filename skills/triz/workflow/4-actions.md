@@ -5,6 +5,20 @@ rank them so the user sees the best 2-3 first.
 
 ## Steps
 
+### 0. List the expert levers first
+
+Before using the principles, write down the 2-4 quantities that drive A and B
+in this domain, the way an experienced practitioner would check them first.
+Give a rough number for each where you can (current value, what is
+achievable). Examples: for drone flight time, battery energy density, hover
+power per kg and motor efficiency; for CI time, the slowest jobs, queue wait
+and test parallelism; for stock, carrying cost and lead time.
+
+These levers are not the answer either. Use them in step 1: the best actions
+apply a principle to one of these levers. If an obvious expert fix exists that
+no principle points to, keep it as an option and say so; TRIZ is there to find
+better options, not to hide good ones.
+
 ### 1. Write actions for each direction
 
 For each principle from stage 3, write 1-3 actions. Use the principle's
@@ -34,7 +48,20 @@ Drop an action when:
 If a direction produces no surviving action, drop the direction and say so in
 one line.
 
-### 3. Score
+### 3. Check the numbers against the target
+
+For each surviving action, estimate how far it moves the user's target (the
+IFR metric from stage 1), even roughly: "about +4 minutes of flight", "cuts
+the 42 minutes by about half". Say what the estimate rests on.
+
+If no single action reaches the target, show which combination does. If none
+does, say how far short the best combination falls.
+
+Do not lower the user's target (a smaller payload, a looser deadline) to make
+an option work unless the user agreed to that change. Lowering the target is
+the compromise TRIZ tries to avoid; offer it only as a labelled fallback.
+
+### 4. Score
 
 | Score | High | Medium | Low |
 |-------|------|--------|-----|
@@ -46,9 +73,10 @@ A side effect that is "improving C worsens D" is a **secondary contradiction**.
 Record it for the plan's Risks section; do not solve it now unless it kills the
 action.
 
-### 4. Rank and recommend
+### 5. Rank and recommend
 
-Rank by IFR fit first, then by low effort, then by fewest side effects.
+Rank by IFR fit first (does it reach the target, by the estimate in step 3),
+then by low effort, then by fewest side effects.
 Recommend the top 2-3. Actions that combine well (one handles the common case,
 another the rest) can be recommended together as one option.
 
@@ -56,8 +84,8 @@ another the rest) can be recommended together as one option.
 
 ```
 Options, ranked:
-1. <action> (#<n>). IFR fit: high. Effort: low. Side effects: <...>
-2. <action> (#<n>). IFR fit: high. Effort: medium. Side effects: <...>
+1. <action> (#<n>). Moves target by: <estimate>. IFR fit: high. Effort: low. Side effects: <...>
+2. <action> (#<n>). Moves target by: <estimate>. IFR fit: high. Effort: medium. Side effects: <...>
 3. ...
 Recommended: 1 and 2 together, because <reason>.
 ```

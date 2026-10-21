@@ -53,3 +53,18 @@ class ZipTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CompactRulesTest(unittest.TestCase):
+    RAW = "https://raw.githubusercontent.com/magery-ai/triz-skill/main/"
+
+    def test_raw_links_point_to_real_files(self):
+        text = (ROOT / "agents" / "AGENTS.md").read_text(encoding="utf-8")
+        links = re.findall(re.escape(self.RAW) + r"(\S+)", text)
+        self.assertTrue(links)
+        for rel in links:
+            self.assertTrue((ROOT / rel).exists(), rel)
+
+    def test_short(self):
+        text = (ROOT / "agents" / "AGENTS.md").read_text(encoding="utf-8")
+        self.assertLess(len(text.splitlines()), 120)
