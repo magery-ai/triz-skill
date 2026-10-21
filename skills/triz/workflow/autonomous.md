@@ -69,9 +69,28 @@ option, or the best option overall if none survived, and lower the confidence.
 
 ## Output
 
+The caller is usually another agent that will act on your answer, so lead
+with what it can do, and keep the analysis in the full plan.
+
 Write both plans as in `workflow/6-plan.md`, with the Assumptions section and
-the confidence level filled in. Return the short plan to the caller and the
-path of the full plan.
+the confidence level filled in. Return this to the caller, in this order and
+in about 400 words or fewer:
+
+1. **Confidence**, and "Needs human review" if it is low.
+2. **The short plan.** Make the first steps executable as written: name the
+   files, commands, config keys or queries to run, and the order to run them.
+   If a step depends on an unverified assumption, make checking it the first
+   step.
+3. **Safety fallback:** what to do if a step makes things worse (how to roll
+   back or what to keep running).
+4. **Assumptions** with high impact, one line each.
+5. **Critic pass**, in one line: that all six question types were answered,
+   and what the pass changed or rejected.
+6. The path of the full plan.
+
+Leave the contradiction ranking, matrix lookups and critic log out of the
+returned message; they belong in the full plan. If you cannot write files,
+put them after the six parts above under "Analysis".
 
 If confidence is **low**, put "Needs human review" at the top of both plans and
 do not act on the plan yourself, even if the caller allowed it. Tell the caller

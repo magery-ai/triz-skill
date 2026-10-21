@@ -8,6 +8,16 @@
 
 ## Unreleased
 
+- Stage 4 now starts from the expert levers (the 2-4 quantities that drive A
+  and B, with rough numbers), estimates how far each action moves the user's
+  target, and does not lower the target without the user's consent. Found in
+  the first with/without eval pilot, where the baseline beat the skill on a
+  drone case by spotting hover efficiency.
+- Autonomous mode returns an action-first message (confidence, executable
+  short plan, rollback, high-impact assumptions, a one-line critic result,
+  full-plan path) in about 400
+  words, with the analysis kept in the full plan. Found in the same pilot,
+  where the baseline's CI plan was easier for a coding agent to act on.
 - `agents/AGENTS.md`: a compact rules-file version of the workflow for
   agents that can't load skills, reading the matrix from this repository.
   Linked from README and INSTALL.md, with a test that its links resolve.
