@@ -4,6 +4,9 @@
 
 - A cell-by-cell check of the matrix against Altshuller's *40 Principles*
   (Shulyak and Rodman, 1997).
+
+## 1.2.0 (2026-10-21)
+
 - Autonomous mode gives the caller engineering depth: stage 1 breaks the
   target metric into its parts and looks for a bottleneck the obvious fix
   misses, and the returned message adds an execution section (measure first,
@@ -12,9 +15,6 @@
   In a blind re-run of the 3 autonomous cases (5 runs), the skill was
   preferred in 5 of 5, up from 1 of 3. Results in
   `evals/results/2026-10-21-autonomous.md`.
-
-## Unreleased
-
 - Two worked examples from AI engineering, linked from the README: a model
   router that halves the inference bill without worse answers (fast mode),
   and OCR with field checks in place of an LLM for invoice extraction
