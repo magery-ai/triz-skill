@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.png">
-    <img src="assets/logo-light.png" width="200" alt="TRIZ skill logo">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg">
+    <img src="assets/logo-light.svg" width="200" alt="TRIZ skill logo">
   </picture>
 </p>
 
@@ -28,7 +28,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/before-after.png" width="880" alt="The same support-team problem answered twice. Without the skill, the agent suggests hiring or AI replies. With the TRIZ skill, it names the contradiction (reply speed against answer reliability), applies principles #10 Preliminary action and #1 Segmentation, and ends with a plan that has a metric and a date.">
+  <img src="assets/before-after.svg" width="880" alt="The same support-team problem answered twice. Without the skill, the agent suggests hiring, AI-drafted replies or a reply target. With the TRIZ skill, it names the contradiction (reply speed against answer reliability), applies principles #10 Preliminary action and #1 Segmentation, and ends with a plan that has a metric and a date.">
 </p>
 
 When you ask an agent to fix a trade-off, faster but not sloppier or lighter
