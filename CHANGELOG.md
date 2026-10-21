@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.4.0 (unreleased)
+
+- `evals/cases/`: 13 scenario cases (4 engineering, 3 software, 2 business,
+  1 personal, 3 autonomous), each with a prompt, a scripted persona, expected
+  contradictions with their matrix cells, and checks.
+- `evals/triggers.yaml` (20 should, 10 should not), `evals/rubric.md`, and
+  `evals/README.md` on how to run and grade cases.
+- `evals/tests/test_evals.py`: every expected cell in the cases must match the
+  matrix.
+- Worked examples: wind turbine blade, cache vs freshness, support speed vs
+  quality.
+- README example fixed to match the matrix (#10, #1 from cells 25x27 and
+  39x27).
+- Issue templates "Wrong matrix cell" and "Submit a worked example", a link to
+  Discussions, and CONTRIBUTING.md.
+
 ## 0.3.0 (unreleased)
 
 - Workflow: full instructions for all six stages and autonomous mode. Intake

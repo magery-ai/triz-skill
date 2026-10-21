@@ -1,0 +1,57 @@
+name: Submit a worked example
+description: Share a problem you solved with the skill so it can join examples/ or the evals.
+title: "Example: <domain> - <problem in a few words>"
+labels: ["example"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Worked examples show other people (and agents) what a good session
+        looks like. Remove anything private before posting. The format follows
+        `skills/triz/examples/TEMPLATE.md`.
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Domain
+      options: [engineering, software, business, personal, other]
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode
+      options: [guided, fast, autonomous]
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem as you stated it
+    validations:
+      required: true
+  - type: textarea
+    id: contradiction
+    attributes:
+      label: Contradiction and parameters
+      description: '"Improving A worsens B", and the parameter ids the agent used'
+    validations:
+      required: true
+  - type: textarea
+    id: plan
+    attributes:
+      label: Short plan
+      description: The short plan the skill produced
+    validations:
+      required: true
+  - type: textarea
+    id: worked
+    attributes:
+      label: What worked and what didn't
+      description: Which stage helped most, and anything the agent got wrong
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Permission
+      options:
+        - label: The project may adapt this example for examples/ or evals/ under the MIT license.
+          required: true

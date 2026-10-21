@@ -1,0 +1,20 @@
+id: auto-api-latency-vs-cost
+domain: software
+mode: autonomous
+prompt: |
+  (Called by an orchestrator.) API p95 latency is 600 ms; target is 200 ms.
+  Adding replicas works but doubles the hosting bill, which the budget forbids.
+  Context: traffic-by-hour.csv shows 80% of traffic in 6 daytime hours.
+  Return a plan without asking anyone.
+persona: none
+expected_contradictions:
+  - improving: 25 Loss of time
+    worsening: 26 Quantity of substance
+    principles: [35, 38, 18, 16]
+  - improving: 25 Loss of time
+    worsening: 23 Loss of substance
+    principles: [35, 18, 10, 39]
+checks:
+  - 'Uses the traffic pattern (separation in time, #19 Periodic action or #15 Dynamics).'
+  - 'Loops back at most 2 times.'
+  - 'States a confidence level.'

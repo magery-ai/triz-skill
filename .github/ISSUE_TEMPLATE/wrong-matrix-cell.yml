@@ -1,0 +1,50 @@
+name: Wrong matrix cell
+description: Report a contradiction matrix cell that differs from a published source.
+title: "Matrix cell <improving> x <worsening>"
+labels: ["matrix"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for checking the matrix. Rows are the improving parameter and
+        columns the worsening one. You can see the current value with
+        `python skills/triz/scripts/matrix_lookup.py --improve <id> --worsen <id>`.
+  - type: input
+    id: improving
+    attributes:
+      label: Improving parameter
+      description: Id and name, e.g. "25 Loss of time"
+    validations:
+      required: true
+  - type: input
+    id: worsening
+    attributes:
+      label: Worsening parameter
+      description: Id and name, e.g. "27 Reliability"
+    validations:
+      required: true
+  - type: input
+    id: current
+    attributes:
+      label: Current value in this repo
+      description: Principle ids in order, e.g. "10, 30, 4"
+    validations:
+      required: true
+  - type: input
+    id: expected
+    attributes:
+      label: Value in your source
+      description: Principle ids in order
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source
+      description: Book (title, edition, translator, page) or URL. Please describe the value; do not paste copyrighted pages.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else

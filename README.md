@@ -7,10 +7,9 @@ and the classic Altshuller contradiction matrix to find solution directions,
 turns them into actions that fit your situation, checks them with you, and
 hands back a short plan and a full one.
 
-> **Status: v0.3 workflow.** All six stages, the domain-mapping guide and the
-> Socratic question bank are written; the matrix, principle data and lookup
-> script are in. The matrix is cross-checked between two copies; see the
-> [roadmap](#roadmap) for what comes next.
+> **Status: v0.4 evals and examples.** The workflow, data, lookup script,
+> scenario evals and three worked examples are in. The matrix is cross-checked
+> between two copies; see the [roadmap](#roadmap) for what comes next.
 
 ## What a session looks like
 
@@ -47,12 +46,13 @@ hands back a short plan and a full one.
 >
 > **You:** Exactly that.
 >
-> **Agent:** Directions to try:
+> **Agent:** Speed here is the time customers wait (25, Loss of time) or
+> tickets handled per hour (39, Productivity). Reading both matrix cells against
+> 27 Reliability, #10 shows up in both, so I'll lead with it, then #1 from
+> the second cell:
 > - **#10 Preliminary action:** do the investigating before the ticket arrives.
 > - **#1 Segmentation:** split tickets that can be answered instantly from those
 >   that can't.
-> - **#24 Intermediary:** put something between the customer and the agent
->   that gathers details first.
 >
 > Concrete options, ranked:
 > 1. Seniors write and own macros for the 20 most common ticket types, which
@@ -60,7 +60,7 @@ hands back a short plan and a full one.
 > 2. A Zendesk trigger routes tickets that match a macro to an "instant" queue
 >    and everything else to "investigate", with an honest 4-hour promise (#1).
 > 3. An intake form asks for the order number and a screenshot before a human
->    sees the ticket (#24).
+>    sees the ticket (#10).
 >
 > One question before we commit: who would object to option 1, and why?
 >
@@ -86,8 +86,9 @@ hands back a short plan and a full one.
 > I saved the full plan, with the analysis, options and validation log, to
 > `triz-plans/2026-10-21-support-speed-vs-quality.md`.
 
-*This example is illustrative. The principle picks will be checked against the
-verified matrix in v1.0.*
+The principles come from the matrix cells 25x27 (#10, #30, #4) and 39x27
+(#1, #35, #10, #38). The full walkthrough is in
+[`skills/triz/examples/business-support-speed-vs-quality.md`](skills/triz/examples/business-support-speed-vs-quality.md).
 
 ## Install
 
@@ -140,11 +141,23 @@ skills/triz/
 ├── templates/          # plan-short.md, plan-full.md
 ├── data/               # parameters, principles, matrix, separation, check status
 ├── scripts/            # matrix_lookup.py (standard library only)
-└── examples/           # worked examples (TEMPLATE.md to start)
-evals/tests/            # data, script and structure tests, run in CI
+└── examples/           # worked examples, plus TEMPLATE.md
+evals/
+├── cases/              # 13 scenario cases (10 guided or fast, 3 autonomous)
+├── triggers.yaml       # should / should-not trigger prompts
+├── rubric.md           # how to grade a run
+└── tests/              # data, script, structure and case tests, run in CI
 ```
 
-Run the tests with `python -m unittest discover -s evals/tests`.
+Run the tests with `python -m unittest discover -s evals/tests`. See
+[`evals/README.md`](evals/README.md) for trigger tests and scenario evals.
+
+## Contributing
+
+Worked examples, eval cases and matrix corrections are welcome. See
+[CONTRIBUTING.md](CONTRIBUTING.md); to report a wrong matrix cell, open a
+[Wrong matrix cell](https://github.com/magery-ai/triz-skill/issues/new?template=wrong-matrix-cell.yml)
+issue.
 
 ## Roadmap
 
@@ -152,8 +165,9 @@ Run the tests with `python -m unittest discover -s evals/tests`.
 - **v0.2 Data:** 39 parameters, 40 principles, 39x39 matrix, separation
   principles, lookup script, data tests and CI.
 - **v0.3 Workflow:** full stage files, domain-mapping guide for non-engineering
-  problems, Socratic question bank. *(this release)*
+  problems, Socratic question bank.
 - **v0.4 Evals and examples:** scenario evals, trigger tests, worked examples.
+  *(this release)*
 - **v1.0 Release:** matrix verified against Altshuller's *40 Principles*
   (Shulyak and Rodman, 1997), plugin marketplace entry, release zip.
 

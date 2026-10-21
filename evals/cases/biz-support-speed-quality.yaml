@@ -1,0 +1,21 @@
+id: biz-support-speed-quality
+domain: business
+mode: guided
+prompt: |
+  Our support team has to answer tickets faster, but when we push for speed
+  the answers get sloppy and customers write back.
+persona: |
+  You are head of support. First reply takes 9 hours, target 1 hour. A 1-hour
+  target raised the reopen rate from 8% to 19%. No new hires this year. You use
+  Zendesk. Seniors may object to canned replies but like owning quality numbers.
+  You accept "faster replies worsen answer reliability".
+expected_contradictions:
+  - improving: 25 Loss of time
+    worsening: 27 Reliability
+    principles: [10, 30, 4]
+  - improving: 39 Productivity
+    worsening: 27 Reliability
+    principles: [1, 35, 10, 38]
+checks:
+  - 'Leads with #10 Preliminary action (answers prepared before tickets arrive).'
+  - 'Asks a viewpoints question and handles the seniors'' objection.'

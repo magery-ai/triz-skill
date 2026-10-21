@@ -1,0 +1,21 @@
+id: eng-pipe-elbow-wear
+domain: engineering
+mode: guided
+prompt: |
+  Our pneumatic line carries abrasive grit. Pushing more grit through per hour
+  wears holes in the pipe bends within weeks.
+persona: |
+  You run maintenance at a foundry. Steel elbows last about 3 weeks at the
+  target flow. Hardened elbows last 6 weeks and cost 4 times as much. The line
+  layout can't change. You accept "more throughput worsens damage to the bends".
+expected_contradictions:
+  - improving: 39 Productivity
+    worsening: 30 External harm affects the object
+    principles: [22, 35, 13, 24]
+  - improving: 9 Speed
+    worsening: 30 External harm affects the object
+    principles: [1, 28, 35, 23]
+checks:
+  - 'Finds the physical contradiction: the bend wall must be hit by grit and not be hit by it.'
+  - 'Offers #22 Blessing in disguise or #24 Intermediary (a layer of the grit itself protecting the wall).'
+  - 'Does not propose a new line layout.'

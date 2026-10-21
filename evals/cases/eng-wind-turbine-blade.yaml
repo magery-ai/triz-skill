@@ -1,0 +1,24 @@
+id: eng-wind-turbine-blade
+domain: engineering
+mode: guided
+prompt: |
+  We want longer wind turbine blades to capture more energy, but every extra
+  metre makes the blade heavier, which overloads the hub and bearings.
+persona: |
+  You design blades for a mid-size turbine maker. Current blades are 60 m of
+  glass fibre. The hub cannot take more load without a redesign you can't
+  afford this year. You tried carbon fibre spar caps; they help but cost too
+  much for the whole blade. Transport length is also a limit. Answer questions
+  briefly and consistently. You accept the contradiction "longer blade worsens
+  weight".
+expected_contradictions:
+  - improving: 3 Length of moving object
+    worsening: 1 Weight of moving object
+    principles: [8, 15, 29, 34]
+  - improving: 14 Strength
+    worsening: 1 Weight of moving object
+    principles: [1, 8, 40, 15]
+checks:
+  - 'Names weight as the worsening side, not cost.'
+  - 'Considers #1 Segmentation or #15 Dynamics (sectional or flexible blades) or #40 Composite materials.'
+  - 'Respects the hub load and transport limits.'

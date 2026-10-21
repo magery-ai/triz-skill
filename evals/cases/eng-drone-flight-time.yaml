@@ -1,0 +1,17 @@
+id: eng-drone-flight-time
+domain: engineering
+mode: guided
+prompt: |
+  Our delivery drone needs longer flight time, but a bigger battery makes it
+  too heavy to carry the parcel.
+persona: |
+  You lead hardware at a small drone startup. Flight time is 22 minutes, target
+  35. Max take-off weight is fixed by regulation. Parcels are up to 2 kg.
+  You accept "longer flight time worsens weight".
+expected_contradictions:
+  - improving: 15 Duration of action of moving object
+    worsening: 1 Weight of moving object
+    principles: [19, 5, 34, 31]
+checks:
+  - 'Uses the regulation limit as a constraint, not as B.'
+  - 'Considers #34 Discarding and recovering (battery swap or drop) or #5 Merging (battery as structure).'

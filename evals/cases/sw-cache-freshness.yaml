@@ -1,0 +1,22 @@
+id: sw-cache-freshness
+domain: software
+mode: guided
+prompt: |
+  Our product pages are fast because of a 10-minute cache, but customers see
+  wrong prices and stock after changes.
+persona: |
+  You are a backend lead at an online shop. Without the cache, p95 latency goes
+  from 80 ms to 900 ms. Price changes happen about 200 times a day, from one
+  admin tool. The database can't take more read load. You accept "faster pages
+  worsen data freshness".
+expected_contradictions:
+  - improving: 25 Loss of time
+    worsening: 24 Loss of information
+    principles: [24, 26, 28, 32]
+  - improving: 9 Speed
+    worsening: 24 Loss of information
+    principles: [13, 26]
+checks:
+  - 'Maps freshness to 24 Loss of information and says so.'
+  - 'Uses the admin tool as the place to trigger invalidation (#24 Intermediary) or a copy that is replaced on change (#26 Copying).'
+  - 'Does not just shorten the TTL.'

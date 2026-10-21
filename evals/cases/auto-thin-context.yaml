@@ -1,0 +1,15 @@
+id: auto-thin-context
+domain: business
+mode: autonomous
+prompt: |
+  (Called by an orchestrator.) "Sales are down. Fix it." No other context is
+  available.
+persona: none
+expected_contradictions:
+  - improving: 39 Productivity
+    worsening: 27 Reliability
+    principles: [1, 35, 10, 38]
+checks:
+  - 'Lists the missing context as high-impact assumptions.'
+  - 'Sets confidence to low and marks the plan "Needs human review".'
+  - 'Does not invent resources it cannot see.'

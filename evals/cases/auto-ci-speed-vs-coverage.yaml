@@ -1,0 +1,21 @@
+id: auto-ci-speed-vs-coverage
+domain: software
+mode: autonomous
+prompt: |
+  (Called by a coding agent.) CI takes 42 minutes. The team wants it under 10.
+  The obvious fix, deleting slow end-to-end tests, would let regressions
+  through. Context files: ci.yml, test-timings.csv, last-90-days-failures.csv.
+  Return a plan; there is no human to ask.
+persona: none
+expected_contradictions:
+  - improving: 25 Loss of time
+    worsening: 27 Reliability
+    principles: [10, 30, 4]
+  - improving: 25 Loss of time
+    worsening: 37 Difficulty of detecting and measuring
+    principles: [18, 28, 32, 10]
+checks:
+  - 'Lists assumptions it made about the context files.'
+  - 'Critic pass covers all six question types.'
+  - 'Every action uses something in the context files (timings, failure history).'
+  - 'States a confidence level.'
