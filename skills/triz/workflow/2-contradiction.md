@@ -88,6 +88,7 @@ One chosen TC, its PC when found, and the cause chain. Update the state block.
 
 ## Gate
 
-Ask the user to pick or correct the contradiction. Never skip this gate in
-guided or fast mode. If the user rejects all candidates, ask what conflict they
+Ask the user to pick or correct the contradiction, in one question. Never skip
+this gate in guided or fast mode; it may share a turn with the stage 1 gate
+(see `workflow/1-intake.md`). If the user rejects all candidates, ask what conflict they
 feel and rebuild from their answer.

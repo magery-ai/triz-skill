@@ -52,8 +52,9 @@ make harder later?" Macros go stale; the weekly review covers it. Approved.
 1. Pull the top 20 ticket types from last quarter (team lead, Friday)
 2. Each senior writes and owns five macros (seniors, in 2 weeks)
 3. Add the instant/investigate trigger in Zendesk (admin, in 2 weeks)
-**Watch for:** reopen rate on macro tickets above 8%
-**Done when:** median first reply under 1 hour with reopen rate at or below 8%
+**Resources:** Zendesk macros and triggers, last quarter's ticket history, seniors' time (about 2 hours each); new: nothing
+**Watch for:** reopen rate on macro tickets above 8% for a week, then pull that macro for review
+**Done when:** median first reply under 1 hour with reopen rate at or below 8%, within 6 weeks
 
 ## What made this work
 

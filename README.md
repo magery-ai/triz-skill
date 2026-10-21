@@ -16,33 +16,28 @@ hands back a short plan and a full one.
 > **You:** Our support team has to answer tickets faster, but every time we
 > push for speed the answers get sloppier and customers write back.
 >
-> **Agent:** Let's work through this with TRIZ. First, a few questions, one at
-> a time. What does "fast" mean for you today, and what is the target?
+> **Agent:** Let's work through this with TRIZ. Two quick questions first,
+> one at a time. What does "fast" mean for you today, and what is the target?
 >
 > **You:** First reply takes about 9 hours. We want under 1 hour.
 >
-> **Agent:** What have you already tried?
+> **Agent:** What have you already tried, and what can't change?
 >
 > **You:** We set a 1-hour target. Replies got faster, but reopen rates went
-> from 8% to 19%.
->
-> **Agent:** What can't change? For example headcount, tools or tone.
->
-> **You:** No new hires this year. We use Zendesk. Senior agents are our best
-> asset.
+> from 8% to 19%. No new hires this year, we use Zendesk, and senior agents
+> are our best asset.
 >
 > **Agent:** Here's my restatement. A team of fixed size has to cut first reply
 > time from 9 hours to under 1 hour without raising the reopen rate above 8%.
 > **Ideal result:** every customer gets a correct answer at once, with no extra
 > staff. **Resources:** Zendesk macros and triggers, ticket history, senior
-> agents' knowledge. Is that right?
+> agents' knowledge.
 >
-> **You:** Yes.
->
-> **Agent:** The contradiction: improving **speed** (parameter 25, Loss of
+> The contradiction behind it: improving **speed** (parameter 25, Loss of
 > time) worsens **reliability** (27, Reliability) of the answers. In physical
 > form: the reply must be *instant*, so agents don't investigate, and
-> *considered*, so it is correct. Does that match what you see?
+> *considered*, so it is correct. Is that the problem, and does the conflict
+> match what you see?
 >
 > **You:** Exactly that.
 >
@@ -80,8 +75,9 @@ hands back a short plan and a full one.
 > 2. Each senior writes and owns five macros (seniors, in 2 weeks)
 > 3. Add the instant/investigate trigger in Zendesk (admin, in 2 weeks)
 >
-> **Watch for:** reopen rate on macro tickets above 8%
-> **Done when:** median first reply under 1 hour with reopen rate at or below 8%
+> **Resources:** Zendesk macros and triggers, last quarter's ticket history, seniors' time (about 2 hours each); new: nothing
+> **Watch for:** reopen rate on macro tickets above 8% for a week, then pull that macro for review
+> **Done when:** median first reply under 1 hour with reopen rate at or below 8%, within 6 weeks
 >
 > I saved the full plan, with the analysis, options and validation log, to
 > `triz-plans/2026-10-21-support-speed-vs-quality.md`.
@@ -121,20 +117,26 @@ cp -r triz-skill/skills/triz ~/.claude/skills/
 
 The skill runs six stages and stops at the gates to check with you:
 
-1. **Intake:** clarify the problem, write the Ideal Final Result, list resources.
-   *Gate: you confirm the restatement.*
+1. **Intake:** up to two clarifying questions, then the Ideal Final Result and
+   resources. *Gate: you confirm the restatement (asked together with stage 2
+   when nothing is left to resolve).*
 2. **Contradiction:** find the "improving A worsens B" conflict at the root.
    *Gate: you pick or correct it.*
 3. **Directions:** look up the contradiction matrix and separation principles.
 4. **Actions:** turn each principle into concrete steps that use your resources.
-5. **Validation:** Socratic questions, one at a time, until you approve an
-   option. *Gate: your approval.*
+5. **Validation:** two Socratic questions, one at a time, then you approve an
+   option. Ask for more if you want them. *Gate: your approval.*
 6. **Plan:** a short plan in chat, and a full plan saved to
-   `triz-plans/YYYY-MM-DD-<slug>.md` in your project.
+   `triz-plans/YYYY-MM-DD-<slug>.md` in your project. Every plan has three
+   required fields: **Resources** (what it uses, and anything new with its
+   cost), **Watch for** (the top risk, a measurable signal, and what to do)
+   and **Done when** (a metric, a target and a date).
+
+A guided session takes about 5-8 of your replies.
 
 Three modes:
 
-- **Guided** (default): every gate.
+- **Guided** (default): every gate, at most two questions per gate.
 - **Fast:** say "just give me options"; one check, and you can skip validation.
 - **Autonomous:** for agents with no human in the loop; the agent answers the
   gates itself, lists its assumptions and flags low-confidence plans for review.

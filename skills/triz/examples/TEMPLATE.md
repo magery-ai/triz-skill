@@ -19,7 +19,8 @@
 
 ## Short plan
 
-<the short plan the skill produced>
+<the short plan the skill produced, with the Resources, Watch for and Done
+when lines filled in>
 
 ## What made this work
 

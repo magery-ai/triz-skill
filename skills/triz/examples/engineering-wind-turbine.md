@@ -10,7 +10,7 @@
 
 ## Conversation
 
-**Stage 1, intake:** The agent asks about the target, what was tried and the
+**Stage 1, intake:** The agent asks two questions: the target, and what was tried and the
 limits. Blades are 60 m of glass fibre; the goal is 70 m. Carbon spar caps
 helped but are too expensive for the whole blade. The hub can't take more
 load this year, and road transport limits a single piece to about 60 m.
@@ -53,8 +53,9 @@ for option 2 to fail?" Carbon supply. The user approves 2 plus 3.
 1. Model root moment for a 70 m blade with outer carbon caps (structures team, 3 weeks)
 2. Add bend-twist layup to the outer third and rerun the fatigue model (structures team, 6 weeks)
 3. Price carbon for 10 m caps per blade (purchasing, 2 weeks)
-**Watch for:** root fatigue margin below the current blade's
-**Done when:** a 70 m design keeps hub load at or under today's 60 m blade
+**Resources:** the existing mould, the pitch system, the structures team's fatigue model; new: carbon for 10 m caps per blade (cost from purchasing)
+**Watch for:** root fatigue margin in the model below the current 60 m blade's, then shorten the carbon section or add bend-twist first
+**Done when:** a modelled 70 m design keeps peak hub load at or under today's 60 m blade, within 6 weeks
 
 ## What made this work
 

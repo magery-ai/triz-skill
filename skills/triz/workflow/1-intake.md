@@ -7,8 +7,8 @@ describe the ideal result, and know what the user already has to work with.
 
 1. **Let the user describe the problem** in their own words. If they already
    did, do not ask again; start at step 2.
-2. **Ask 3-5 clarifying questions, one at a time.** Pick the ones the user's
-   description leaves open, in this order of priority:
+2. **Ask at most 2 clarifying questions, one at a time.** Pick the ones the
+   user's description leaves open, in this order of priority:
    - **Goal:** "What would success look like? Is there a number or a date?"
    - **History:** "What have you already tried, and what happened?"
    - **Constraints:** "What limits do you have: time, money, people, tools?"
@@ -16,8 +16,10 @@ describe the ideal result, and know what the user already has to work with.
    - **Stakeholders:** "Who is affected, and who decides?"
    - **Scale:** "How often does this happen, and how big is the cost when it does?"
 
-   Skip a question when the answer is already clear. Stop at 5 even if gaps
-   remain; note the gaps as open questions in the state block.
+   Skip a question when the answer is already clear; ask none if the
+   description covers the goal and the constraints. Stop at 2 even if gaps
+   remain; note the gaps as open questions in the state block. Ask more only
+   if the user invites it or the problem cannot be restated without it.
 3. **Restate the problem** in one paragraph: who, what goes wrong, how much it
    costs, what has been tried, and the target.
 4. **Write the Ideal Final Result (IFR).** See below.
@@ -77,5 +79,8 @@ Show the restatement, IFR and resources, then ask: "Is that right? Anything to
 correct or add?" Do not continue until the user confirms. If they correct it,
 update the state block and ask again only if the correction was large.
 
-In fast mode, combine this gate with the stage 2 gate: show the restatement
-and the contradiction together and ask once.
+**Merge with the stage 2 gate** when there is nothing to resolve here: no open
+questions, and the user's answers fit the restatement. Then run stage 2 at
+once and show the restatement and the contradiction together with one
+question: "Is that the problem, and is this the conflict at its root?" Always
+merge in fast mode.

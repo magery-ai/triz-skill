@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.1.0 (2026-10-21)
+
+- Required plan fields: every short and full plan, in every mode, now has
+  **Resources** (what it uses, and anything new with its cost), **Watch for**
+  (the top risk, a signal with a threshold, and what to do when it is
+  crossed) and **Done when** (a metric tied to the IFR, a target and a date).
+  `workflow/6-plan.md` defines what each must contain; the full plan's
+  section 9 holds them as tables. The examples and README show all three.
+- Question budget for guided mode: at most 2 clarifying questions in intake
+  and 2 Socratic questions in validation, one at a time, aiming at a plan in
+  about 5-8 user turns. The intake and contradiction checks merge into one
+  turn when intake leaves nothing open, and the approval request shares a
+  turn with the last Socratic answer. More questions only when the user asks
+  or a loop-back needs it. Fast mode: at most 1 clarifying question and 2
+  skippable risk questions. Autonomous mode is unchanged.
+- Rubric: new "Question budget" and "Plan fields" items; the Socratic item
+  now expects 2 questions instead of at least 3.
+- Tests for the required fields in the templates and examples, and for the
+  question budget in the stage files.
+
 ## 1.0.0 (2026-10-21)
 
 First release.

@@ -6,13 +6,15 @@ plan survives contact with the real situation.
 ## Steps
 
 1. Present the top 2-3 options from stage 4 in a few lines each.
-2. Ask **one question at a time** from the bank below. Wait for the answer.
+2. Ask **one question at a time** from the bank below, **at most 2**. Wait for
+   each answer.
 3. After each answer, decide: keep going, change the option, loop back, or stop.
 4. Record each question, answer and change for the validation log.
 
 ### Which questions to ask
 
-- Ask at least **3 questions of different types**.
+- Ask **2 questions of different types**. Pick the two most likely to break
+  the leading option; the rest of the bank is for when the user asks for more.
 - Start with the type most likely to break the leading option. Usually that is
   **Consequences** or **Viewpoints**.
 - Use **Clarification** when an answer is vague, not as an opener.
@@ -76,8 +78,9 @@ plan survives contact with the real situation.
 Stop and move to stage 6 when one of these happens:
 
 - The user approves an option ("let's do that", "yes, go with 1").
-- About 7 questions have been asked and the leading option still stands; ask
-  for approval directly.
+- Two questions have been asked and the leading option still stands. Ask
+  for approval, in the same message as your reply to the second answer.
+- The user asked for more scrutiny and about 7 questions have been asked.
 - The user asks to stop. Note "partly validated" in the plan.
 
 ## Loop-back rules
@@ -94,7 +97,7 @@ user whether to continue or settle on the best option so far.
 
 ## Fast mode
 
-Ask only 2-3 questions, from Consequences and Viewpoints. Offer to skip:
+Ask at most 2 questions, from Consequences and Viewpoints. Offer to skip:
 "I have two quick risk questions, or I can go straight to the plan." If the
 user skips, mark the plan "Validated: skipped (fast mode)".
 
@@ -104,4 +107,6 @@ The approved option, the questions asked with answers, and what changed.
 
 ## Gate
 
-Explicit user approval of one option before stage 6.
+Explicit user approval of one option before stage 6. The approval question
+does not count toward the 2 questions, but it shares a turn with the last one
+when possible.
