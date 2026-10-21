@@ -196,8 +196,10 @@ We ran all 13 eval cases with and without the skill and had a separate agent
 grade the two conversations blind. With the skill, every plan named the
 conflict, set a dated target and gave a risk threshold, and the grader
 preferred it in 11 of 13 cases. It takes about three more of your replies.
-Both losses were in autonomous mode. This is one run per arm with simulated
-users, so read it as a first signal. See the
+Both losses were in autonomous mode; after a fix, a blind re-run of the
+autonomous cases preferred the skill in 5 of 5 runs
+([details](evals/results/2026-10-21-autonomous.md)). This is one run per arm
+with simulated users, so read it as a first signal. See the
 [full results and method](evals/results/2026-10-21.md).
 
 ## FAQ

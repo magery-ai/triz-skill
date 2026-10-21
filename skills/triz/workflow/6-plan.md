@@ -6,7 +6,8 @@ of why (the full plan).
 ## Steps
 
 1. **Fill `templates/plan-short.md`** and show it in chat.
-   - Keep it on one screen: at most 3-5 next steps.
+   - Keep it on one screen: at most 3-5 next steps (autonomous mode can
+     use more; see `workflow/autonomous.md`).
    - Every step has an owner and a time ("by Friday", "in 2 weeks"). If the
      user did not say, propose one and mark it "(proposed)".
    - Fill the three required fields (see below): Resources, Watch for and
