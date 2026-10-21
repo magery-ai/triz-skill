@@ -24,6 +24,7 @@
   <a href="#install">Install</a> ·
   <a href="#see-it-work">Example</a> ·
   <a href="#how-it-works">How it works</a> ·
+  <a href="#results">Results</a> ·
   <a href="#faq">FAQ</a>
 </p>
 
@@ -183,13 +184,28 @@ plan is saved to `triz-plans/YYYY-MM-DD-<slug>.md` in your project.
 | **Fast** | Say "just give me options" | One check, and you can skip validation |
 | **Autonomous** | No human in the loop | The agent answers its own checks, lists its assumptions and flags low-confidence plans |
 
+## Results
+
+<p align="center">
+  <img src="assets/eval-results.svg" width="760" alt="Eval results on 13 cases, with the skill against without. Names the root conflict: 13 of 13 against 10 of 13. Case-specific checks: 32 of 33 against 22 of 33. Dated, measurable target: 13 of 13 against 7 of 13. Risk signal with a threshold: 13 of 13 against 6 of 13. Preferred by the blind grader: 11 of 13 against 2 of 13.">
+</p>
+
+We ran all 13 eval cases with and without the skill and had a separate agent
+grade the two conversations blind. With the skill, every plan named the
+conflict, set a dated target and gave a risk threshold, and the grader
+preferred it in 11 of 13 cases. It takes about three more of your replies.
+Both losses were in autonomous mode. This is one run per arm with simulated
+users, so read it as a first signal. See the
+[full results and method](evals/results/2026-10-21.md).
+
 ## FAQ
 
 **Can't my agent do this without the skill?**
 It knows what TRIZ is, but left alone it tends to trade one side off against
 the other or give a generic list. The skill makes it name the contradiction,
 look up the actual matrix cell, tie each option to your resources and end with
-a plan you can measure.
+a plan you can measure. In our evals, plans without the skill had a dated
+target in 7 of 13 cases; with it, 13 of 13. See [Results](#results).
 
 **Is it only for engineering?**
 No. A mapping guide translates software, business and personal problems into

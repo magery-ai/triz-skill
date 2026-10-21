@@ -4,10 +4,14 @@
 
 - A cell-by-cell check of the matrix against Altshuller's *40 Principles*
   (Shulyak and Rodman, 1997).
-- Recorded with/without eval runs.
+- Improve autonomous output, where the baseline won 2 of 3 eval cases.
 
 ## Unreleased
 
+- First full with/without eval run (13 cases, blind grading): the skill
+  passed 123 of 124 items against 92, and was preferred in 11 of 13 cases.
+  Results in `evals/results/2026-10-21.md`, with a chart and summary in the
+  README.
 - Stage 4 now starts from the expert levers (the 2-4 quantities that drive A
   and B, with rough numbers), estimates how far each action moves the user's
   target, and does not lower the target without the user's consent. Found in
