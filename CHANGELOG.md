@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.3.0 (unreleased)
+
+- Workflow: full instructions for all six stages and autonomous mode. Intake
+  gets an IFR guide with examples and a resource checklist; contradiction gets
+  cause chains, TC and PC forms, candidate format and checks; directions covers
+  empty and reverse cells, merging and separation; actions get an action
+  format, filter rules and a scoring table; plan delivery gets slug and file
+  rules.
+- `workflow/5-socratic.md`: question bank of 30 questions, 5 for each of the
+  six types, with selection, stop and loop-back rules.
+- `workflow/autonomous.md`: assumption log, contradiction ranking, critic pass
+  (self-critique or critic agent), 2-loop cap and confidence rubric.
+- `guides/domain-mapping.md`: software, business and personal terms mapped to
+  the 39 parameters, with three worked mappings.
+- SKILL.md example now uses the real matrix cells (#10, #1 from merging
+  25:27 and 39:27).
+- `evals/tests/test_skill.py`: frontmatter, length, file references, mapping
+  names and question bank checks.
+
 ## 0.2.0 (unreleased)
 
 - Data: `parameters.json` (39 parameters with definitions and aliases),

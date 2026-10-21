@@ -7,9 +7,10 @@ and the classic Altshuller contradiction matrix to find solution directions,
 turns them into actions that fit your situation, checks them with you, and
 hands back a short plan and a full one.
 
-> **Status: v0.2 data.** The workflow is drafted, and the matrix, principle
-> data and lookup script are in. The matrix is cross-checked between two
-> copies; the check against the book comes in v1.0. See the [roadmap](#roadmap).
+> **Status: v0.3 workflow.** All six stages, the domain-mapping guide and the
+> Socratic question bank are written; the matrix, principle data and lookup
+> script are in. The matrix is cross-checked between two copies; see the
+> [roadmap](#roadmap) for what comes next.
 
 ## What a session looks like
 
@@ -135,11 +136,12 @@ Three modes:
 skills/triz/
 ├── SKILL.md            # trigger, rules, stage map, modes, state block
 ├── workflow/           # one file per stage, plus autonomous.md
+├── guides/             # domain-mapping.md: software, business, personal terms
 ├── templates/          # plan-short.md, plan-full.md
 ├── data/               # parameters, principles, matrix, separation, check status
 ├── scripts/            # matrix_lookup.py (standard library only)
 └── examples/           # worked examples (TEMPLATE.md to start)
-evals/tests/            # data and script tests, run in CI
+evals/tests/            # data, script and structure tests, run in CI
 ```
 
 Run the tests with `python -m unittest discover -s evals/tests`.
@@ -148,9 +150,9 @@ Run the tests with `python -m unittest discover -s evals/tests`.
 
 - **v0.1 Skeleton:** SKILL.md, draft workflow, templates.
 - **v0.2 Data:** 39 parameters, 40 principles, 39x39 matrix, separation
-  principles, lookup script, data tests and CI. *(this release)*
+  principles, lookup script, data tests and CI.
 - **v0.3 Workflow:** full stage files, domain-mapping guide for non-engineering
-  problems, Socratic question bank.
+  problems, Socratic question bank. *(this release)*
 - **v0.4 Evals and examples:** scenario evals, trigger tests, worked examples.
 - **v1.0 Release:** matrix verified against Altshuller's *40 Principles*
   (Shulyak and Rodman, 1997), plugin marketplace entry, release zip.
