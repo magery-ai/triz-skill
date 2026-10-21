@@ -6,7 +6,7 @@
   (Shulyak and Rodman, 1997).
 - Improve autonomous output, where the baseline won 2 of 3 eval cases.
 
-## Unreleased
+## 1.1.0 (2026-10-21)
 
 - First full with/without eval run (13 cases, blind grading): the skill
   passed 123 of 124 items against 92, and was preferred in 11 of 13 cases.
@@ -42,9 +42,6 @@
   assumption in autonomous mode), then separation only. The question budget
   allows this one stage 3 question.
 - Tests that worked merges and the populated/empty lists match the matrix.
-
-## 1.1.0 (2026-10-21)
-
 - Required plan fields: every short and full plan, in every mode, now has
   **Resources** (what it uses, and anything new with its cost), **Watch for**
   (the top risk, a signal with a threshold, and what to do when it is
