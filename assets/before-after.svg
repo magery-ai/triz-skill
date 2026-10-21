@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1760 880" width="1760" height="880" role="img" aria-label="The same support-team problem answered twice. Without the skill, the agent suggests hiring, AI replies or a target. With the TRIZ skill, it names the contradiction, applies principles #10 and #1, and ends with a plan that has a metric and a date.">
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .bg { fill: #F5F7FA; }
+    .panel { fill: #FFFFFF; stroke: #D8DEE8; stroke-width: 2; }
+    .ink { fill: #18202C; }
+    .muted { fill: #6B7588; }
+    .grey { fill: #8A94A6; }
+    .greybox { fill: #EEF1F5; }
+    .blue { fill: #1D5BB0; }
+    .bluebox { fill: #E5EEFA; }
+    .bluestroke { stroke: #1D5BB0; }
+    .amber { fill: #B4530B; }
+    .amberbox { fill: #FBEEDD; }
+    .line { stroke: #D8DEE8; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #11161E; }
+      .panel { fill: #18202B; stroke: #2B3646; }
+      .ink { fill: #E4E9F1; }
+      .muted { fill: #9AA6B8; }
+      .grey { fill: #8A94A6; }
+      .greybox { fill: #222B37; }
+      .blue { fill: #7EB0F2; }
+      .bluebox { fill: #1B2B42; }
+      .bluestroke { stroke: #7EB0F2; }
+      .amber { fill: #F0A35E; }
+      .amberbox { fill: #3A2614; }
+      .line { stroke: #2B3646; }
+    }
+  </style>
+
+  <rect class="bg" width="1760" height="880"/>
+
+  <text class="muted mono" x="880" y="62" text-anchor="middle" font-size="22" letter-spacing="2">SAME PROMPT</text>
+  <text class="ink" x="880" y="104" text-anchor="middle" font-size="32" font-weight="600">“Support replies must get faster, but speed makes the answers sloppy.”</text>
+
+  <!-- Left: without the skill -->
+  <rect class="panel" x="60" y="150" width="760" height="670" rx="16"/>
+  <text class="grey" x="100" y="210" font-size="30" font-weight="700">Without the skill</text>
+  <text class="muted" x="100" y="246" font-size="22">The agent splits the difference</text>
+
+  <rect class="greybox" x="100" y="290" width="680" height="330" rx="20"/>
+  <circle class="grey" cx="140" cy="350" r="7"/>
+  <text class="muted" x="166" y="359" font-size="28">Hire more support agents</text>
+  <circle class="grey" cx="140" cy="430" r="7"/>
+  <text class="muted" x="166" y="439" font-size="28">Draft replies with AI</text>
+  <circle class="grey" cx="140" cy="510" r="7"/>
+  <text class="muted" x="166" y="519" font-size="28">Set a 1-hour reply target</text>
+  <text class="grey" x="140" y="585" font-size="22" font-style="italic">…and accept a few more reopens</text>
+
+  <text class="grey mono" x="100" y="690" font-size="22">No root conflict named</text>
+  <text class="grey mono" x="100" y="730" font-size="22">No metric, no date</text>
+  <text class="grey mono" x="100" y="770" font-size="22">Already tried: reopens went 8% → 19%</text>
+
+  <!-- Arrow between panels -->
+  <path d="M836 485 H904" stroke-width="5" stroke-linecap="round" class="bluestroke" fill="none"/>
+  <path d="M898 472 L918 485 L898 498 Z" class="blue"/>
+
+  <!-- Right: with TRIZ -->
+  <rect class="panel" x="940" y="150" width="760" height="670" rx="16"/>
+  <text class="blue" x="980" y="210" font-size="30" font-weight="700">With the TRIZ skill</text>
+  <text class="muted" x="980" y="246" font-size="22">The agent resolves the conflict</text>
+
+  <text class="muted mono" x="980" y="300" font-size="18" letter-spacing="2">CONTRADICTION</text>
+  <rect class="bluebox" x="980" y="314" width="680" height="64" rx="12"/>
+  <text class="ink" x="1004" y="356" font-size="27" font-weight="600">Reply speed <tspan class="blue">vs</tspan> answer reliability <tspan class="muted" font-weight="400" font-size="22">(25 × 27)</tspan></text>
+
+  <text class="muted mono" x="980" y="424" font-size="18" letter-spacing="2">PRINCIPLES</text>
+  <rect class="bluebox" x="980" y="438" width="320" height="52" rx="26"/>
+  <text class="blue" x="1140" y="472" text-anchor="middle" font-size="23" font-weight="600">#10 Preliminary action</text>
+  <rect class="bluebox" x="1316" y="438" width="260" height="52" rx="26"/>
+  <text class="blue" x="1446" y="472" text-anchor="middle" font-size="23" font-weight="600">#1 Segmentation</text>
+
+  <text class="muted mono" x="980" y="536" font-size="18" letter-spacing="2">PLAN</text>
+  <line class="line" x1="980" y1="550" x2="1660" y2="550" stroke-width="2"/>
+  <text class="ink" x="980" y="592" font-size="25">1. Seniors own macros for the top 20 ticket types</text>
+  <text class="ink" x="980" y="636" font-size="25">2. Split “instant” and “investigate” queues</text>
+  <text class="ink" x="980" y="680" font-size="25">3. Intake form asks for order number first</text>
+
+  <rect class="amberbox" x="980" y="712" width="680" height="76" rx="12"/>
+  <text class="amber" x="1004" y="744" font-size="20" font-weight="700" letter-spacing="1">DONE WHEN</text>
+  <text class="ink" x="1004" y="775" font-size="23">First reply under 1 h, reopens ≤ 8%, within 6 weeks</text>
+
+  <text class="muted" x="880" y="860" text-anchor="middle" font-size="18">Illustration based on the worked example in skills/triz/examples/business-support-speed-vs-quality.md</text>
+</svg>

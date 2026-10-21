@@ -1,17 +1,85 @@
-# TRIZ skill for AI agents
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg">
+    <img src="assets/logo-light.svg" width="200" alt="TRIZ skill logo">
+  </picture>
+</p>
 
-An open-source [agent skill](https://agentskills.io) that teaches an AI agent
-to solve stuck problems with TRIZ, the theory of inventive problem solving. It
-finds the contradiction behind your problem, uses the 40 inventive principles
-and the classic Altshuller contradiction matrix to find solution directions,
-turns them into actions that fit your situation, checks them with you, and
-hands back a short plan and a full one.
+<h1 align="center">TRIZ skill</h1>
 
-> **Status: v1.0.** Workflow, data, lookup script, evals and worked examples
-> are in. The matrix is cross-checked against three copies but not yet
-> against the book; see [Sources](#sources).
+<p align="center">
+  <strong>Your agent gets stuck on trade-offs. TRIZ finds the way out.</strong>
+</p>
 
-## What a session looks like
+<p align="center">
+  <a href="https://github.com/magery-ai/triz-skill/releases/latest"><img src="https://img.shields.io/github/v/release/magery-ai/triz-skill?style=flat-square&color=1d5bb0&label=release" alt="Latest release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-1d5bb0?style=flat-square" alt="MIT license"></a>
+  <a href="https://github.com/magery-ai/triz-skill/actions/workflows/validate.yml"><img src="https://img.shields.io/github/actions/workflow/status/magery-ai/triz-skill/validate.yml?branch=main&style=flat-square&label=tests" alt="Tests"></a>
+  <a href="https://agentskills.io"><img src="https://img.shields.io/badge/format-Agent%20Skills-1d5bb0?style=flat-square" alt="Agent Skills format"></a>
+  <a href="#install"><img src="https://img.shields.io/badge/Claude%20Code-plugin-1d5bb0?style=flat-square" alt="Claude Code plugin"></a>
+  <a href="https://github.com/magery-ai/triz-skill/stargazers"><img src="https://img.shields.io/github/stars/magery-ai/triz-skill?style=flat-square&color=1d5bb0&label=stars" alt="GitHub stars"></a>
+</p>
+
+<p align="center">
+  <a href="#install">Install</a> ·
+  <a href="#see-it-work">Example</a> ·
+  <a href="#how-it-works">How it works</a> ·
+  <a href="#faq">FAQ</a>
+</p>
+
+<p align="center">
+  <img src="assets/before-after.svg" width="880" alt="The same support-team problem answered twice. Without the skill, the agent suggests hiring, AI-drafted replies or a reply target. With the TRIZ skill, it names the contradiction (reply speed against answer reliability), applies principles #10 Preliminary action and #1 Segmentation, and ends with a plan that has a metric and a date.">
+</p>
+
+When you ask an agent to fix a trade-off, faster but not sloppier or lighter
+but not weaker, it usually splits the difference. This
+[agent skill](https://agentskills.io) teaches it TRIZ, the theory of inventive
+problem solving. The agent finds the contradiction behind your problem and
+looks it up in Altshuller's contradiction matrix and the 40 inventive
+principles. It turns the results into steps that use what you already have,
+checks them with you, and hands back a short plan and a full one.
+
+## Install
+
+**Ask your agent.** Paste this into Claude Code or any agent that supports
+skills:
+
+```text
+Install the TRIZ skill from https://github.com/magery-ai/triz-skill
+```
+
+**Claude Code** (plugin marketplace):
+
+```
+/plugin marketplace add magery-ai/triz-skill
+/plugin install triz@triz-skill
+```
+
+**Claude.ai:** download `triz-skill-<version>.zip` from the
+[latest release](https://github.com/magery-ai/triz-skill/releases/latest) and
+upload it under Settings > Capabilities > Skills.
+
+**Any agent** with the [skills CLI](https://skills.sh):
+
+```bash
+npx skills add magery-ai/triz-skill --skill triz
+```
+
+Manual install and other options are in [INSTALL.md](INSTALL.md).
+
+Then describe a problem where improving one thing makes another worse, for
+example: *"Our pages need to be fast, but the cache shows stale prices."*
+
+## See it work
+
+| Problem | Contradiction | What the agent proposed |
+|---|---|---|
+| [Support replies faster without sloppy answers](skills/triz/examples/business-support-speed-vs-quality.md) | Reply speed against answer reliability | Senior-owned macros plus split queues (#10, #1) |
+| [Fast product pages with fresh prices](skills/triz/examples/software-cache-vs-freshness.md) | Response time against data freshness | Purge on change from the admin tool, TTL as fallback (#24, #26) |
+| [Longer wind turbine blades without the weight](skills/triz/examples/engineering-wind-turbine.md) | Blade length against blade weight | Carbon caps only in the outer 10 m plus bend-twist layout (#40, #15) |
+
+<details>
+<summary><strong>Read a full session</strong> (support team, about 6 replies)</summary>
 
 > **You:** Our support team has to answer tickets faster, but every time we
 > push for speed the answers get sloppier and customers write back.
@@ -82,108 +150,70 @@ hands back a short plan and a full one.
 > I saved the full plan, with the analysis, options and validation log, to
 > `triz-plans/2026-10-21-support-speed-vs-quality.md`.
 
-The principles come from the matrix cells 25x27 (#10, #30, #4) and 39x27
-(#1, #35, #10, #38). The full walkthrough is in
-[`skills/triz/examples/business-support-speed-vs-quality.md`](skills/triz/examples/business-support-speed-vs-quality.md).
-
-## Install
-
-**Claude Code** (plugin marketplace):
-
-```
-/plugin marketplace add magery-ai/triz-skill
-/plugin install triz@triz-skill
-```
-
-**Claude.ai:** download `triz-skill-<version>.zip` from the
-[latest release](https://github.com/magery-ai/triz-skill/releases/latest) and
-upload it under Settings > Capabilities > Skills.
-
-**Any agent** with the [skills CLI](https://skills.sh):
-
-```bash
-npx skills add magery-ai/triz-skill --skill triz
-```
-
-Or copy the folder by hand (Claude Code shown; other agents use their own
-skills folder):
-
-```bash
-git clone https://github.com/magery-ai/triz-skill
-cp -r triz-skill/skills/triz ~/.claude/skills/
-```
+</details>
 
 ## How it works
 
-The skill runs six stages and stops at the gates to check with you:
-
-1. **Intake:** up to two clarifying questions, then the Ideal Final Result and
-   resources. *Gate: you confirm the restatement (asked together with stage 2
-   when nothing is left to resolve).*
-2. **Contradiction:** find the "improving A worsens B" conflict at the root.
-   *Gate: you pick or correct it.*
-3. **Directions:** look up the contradiction matrix and separation principles.
-4. **Actions:** turn each principle into concrete steps that use your resources.
-5. **Validation:** two Socratic questions, one at a time, then you approve an
-   option. Ask for more if you want them. *Gate: your approval.*
-6. **Plan:** a short plan in chat, and a full plan saved to
-   `triz-plans/YYYY-MM-DD-<slug>.md` in your project. Every plan has three
-   required fields: **Resources** (what it uses, and anything new with its
-   cost), **Watch for** (the top risk, a measurable signal, and what to do)
-   and **Done when** (a metric, a target and a date).
-
-A guided session takes about 5-8 of your replies.
-
-Three modes:
-
-- **Guided** (default): every gate, at most two questions per gate.
-- **Fast:** say "just give me options"; one check, and you can skip validation.
-- **Autonomous:** for agents with no human in the loop; the agent answers the
-  gates itself, lists its assumptions and flags low-confidence plans for review.
-
-## Repository layout
-
-```
-skills/triz/
-├── SKILL.md            # trigger, rules, stage map, modes, state block
-├── workflow/           # one file per stage, plus autonomous.md
-├── guides/             # domain-mapping.md: software, business, personal terms
-├── templates/          # plan-short.md, plan-full.md
-├── data/               # parameters, principles, matrix, separation, check status
-├── scripts/            # matrix_lookup.py (standard library only)
-└── examples/           # worked examples, plus TEMPLATE.md
-.claude-plugin/         # marketplace.json for Claude Code
-tools/build_zip.py      # builds the Claude.ai release zip
-evals/
-├── cases/              # 13 scenario cases (10 guided or fast, 3 autonomous)
-├── triggers.yaml       # should / should-not trigger prompts
-├── rubric.md           # how to grade a run
-└── tests/              # data, script, structure and case tests, run in CI
+```mermaid
+flowchart LR
+    A[1. Intake<br/>restate, ideal result,<br/>resources] --> B[2. Contradiction<br/>improving A<br/>worsens B]
+    B --> C[3. Directions<br/>matrix and<br/>separation]
+    C --> D[4. Actions<br/>steps that use<br/>your resources]
+    D --> E[5. Validation<br/>two Socratic<br/>questions]
+    E --> F[6. Plan<br/>short in chat,<br/>full in a file]
+    E -. rethink .-> B
+    E -. more options .-> D
 ```
 
-Run the tests with `python -m unittest discover -s evals/tests`. See
-[`evals/README.md`](evals/README.md) for trigger tests and scenario evals.
+The agent stops to check with you three times: after it restates the problem,
+after it names the contradiction, and before it commits to an option. A
+guided session takes about 5-8 of your replies.
+
+Every plan has three required fields: **Resources** (what it uses, and
+anything new with its cost), **Watch for** (the top risk, a measurable signal
+and what to do) and **Done when** (a metric, a target and a date). The full
+plan is saved to `triz-plans/YYYY-MM-DD-<slug>.md` in your project.
+
+| Mode | When to use it | What changes |
+|---|---|---|
+| **Guided** (default) | You want to think it through | Every check, at most two questions at each |
+| **Fast** | Say "just give me options" | One check, and you can skip validation |
+| **Autonomous** | No human in the loop | The agent answers its own checks, lists its assumptions and flags low-confidence plans |
+
+## FAQ
+
+**Can't my agent do this without the skill?**
+It knows what TRIZ is, but left alone it tends to trade one side off against
+the other or give a generic list. The skill makes it name the contradiction,
+look up the actual matrix cell, tie each option to your resources and end with
+a plan you can measure.
+
+**Is it only for engineering?**
+No. A mapping guide translates software, business and personal problems into
+TRIZ parameters, and the examples above cover all three kinds.
+
+**How accurate is the contradiction matrix?**
+Three independent copies agree on 1,492 of 1,521 cells. The other 29 are
+marked as disputed, and the agent shows both values. The cells have not yet
+been checked against the 1997 book. See [Sources](#sources).
+
+**Does it need Python?**
+No. A small lookup script (standard library only) makes matrix lookups
+faster. Agents that can't run scripts read the data files directly.
+
+**Where does the plan go?**
+The short plan stays in the chat. The full plan, with the analysis and the
+validation log, goes to `triz-plans/` in your project, or into the chat if the
+agent has no file access.
 
 ## Contributing
 
 Worked examples, eval cases and matrix corrections are welcome. See
-[CONTRIBUTING.md](CONTRIBUTING.md); to report a wrong matrix cell, open a
+[CONTRIBUTING.md](CONTRIBUTING.md) for the repository layout and how to run
+the tests, and [CHANGELOG.md](CHANGELOG.md) for what changed in each release.
+To report a wrong matrix cell, open a
 [Wrong matrix cell](https://github.com/magery-ai/triz-skill/issues/new?template=wrong-matrix-cell.yml)
 issue.
-
-## Roadmap
-
-- **v0.1 Skeleton:** SKILL.md, draft workflow, templates.
-- **v0.2 Data:** 39 parameters, 40 principles, 39x39 matrix, separation
-  principles, lookup script, data tests and CI.
-- **v0.3 Workflow:** full stage files, domain-mapping guide for non-engineering
-  problems, Socratic question bank.
-- **v0.4 Evals and examples:** scenario evals, trigger tests, worked examples.
-- **v1.0 Release:** plugin marketplace entry, release zip, matrix status
-  documented. *(this release)*
-
-Next: a cell-by-cell check of the matrix against Altshuller's *40 Principles*
-(Shulyak and Rodman, 1997), and recorded with/without eval runs.
 
 ## Sources
 
@@ -208,3 +238,12 @@ issue.
 ## License
 
 [MIT](LICENSE)
+
+## Star history
+
+<a href="https://star-history.com/#magery-ai/triz-skill&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=magery-ai/triz-skill&type=Date&theme=dark">
+    <img src="https://api.star-history.com/svg?repos=magery-ai/triz-skill&type=Date" width="600" alt="Star history chart">
+  </picture>
+</a>

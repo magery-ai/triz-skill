@@ -1,7 +1,19 @@
 # Changelog
 
+## Next
+
+- A cell-by-cell check of the matrix against Altshuller's *40 Principles*
+  (Shulyak and Rodman, 1997).
+- Recorded with/without eval runs.
+
 ## Unreleased
 
+- README rebuilt around a short first screen: logo, one-line promise, badges,
+  a before/after image, install near the top with an "ask your agent" line,
+  an example table with the full session collapsed, a stage diagram, a modes
+  table and a FAQ. The matrix status note moved to Sources, the repository
+  layout to CONTRIBUTING.md and the version roadmap here. New INSTALL.md with
+  every install option.
 - Domain mapping: software "serving cost" (cost per request, inference bill)
   now maps to 23 Loss of substance instead of 32 Ease of manufacture, which is
   empty against 27 Reliability in both directions. New rows for serving cost

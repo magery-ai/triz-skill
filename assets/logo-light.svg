@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="TRIZ skill logo">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M26 140 H82" stroke="#18202C" stroke-width="14"/>
+    <path d="M174 140 H118" stroke="#18202C" stroke-width="14"/>
+    <path d="M100 128 C100 104 100 80 100 50" stroke="#1D5BB0" stroke-width="14"/>
+  </g>
+  <path d="M78 124 L100 140 L78 156 Z" fill="#18202C" stroke="#18202C" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M122 124 L100 140 L122 156 Z" fill="#18202C" stroke="#18202C" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M82 58 L100 30 L118 58 Z" fill="#1D5BB0" stroke="#1D5BB0" stroke-width="6" stroke-linejoin="round"/>
+  <circle cx="100" cy="140" r="7" fill="#E8912D"/>
+</svg>
