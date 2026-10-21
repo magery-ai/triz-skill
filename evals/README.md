@@ -43,3 +43,5 @@ To run a case:
 
 There are 10 guided or fast cases (4 engineering, 3 software, 2 business,
 1 personal) and 3 autonomous cases. Add a case for each bug found in real use.
+
+Results of past runs are in [`results/`](results/).
