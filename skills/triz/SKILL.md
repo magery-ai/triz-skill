@@ -30,35 +30,60 @@ Do not use it for factual questions ("what is TRIZ?"), pure execution tasks
 ## Core rules
 
 1. Ask one question at a time. Wait for the answer.
-2. Never skip the contradiction gate (stage 2). A wrong contradiction
+2. Keep to the question budget (below). A gate is a checkpoint, not an
+   interview.
+3. Never skip the contradiction gate (stage 2). A wrong contradiction
    invalidates everything after it.
-3. Principles are directions, not answers. Every action must name something
+4. Principles are directions, not answers. Every action must name something
    from the user's own situation: a resource, a constraint, a person, a tool.
-4. Always cite principle numbers and names, e.g. "#35 Parameter changes".
-5. Read only the workflow file for the current stage.
-6. Keep the state block (below) up to date and show it when you loop back.
-7. Use plain language. Explain a TRIZ term the first time you use it.
+5. Always cite principle numbers and names, e.g. "#35 Parameter changes".
+6. Read only the workflow file for the current stage.
+7. Keep the state block (below) up to date and show it when you loop back.
+8. Use plain language. Explain a TRIZ term the first time you use it.
 
 ## Stage map
 
 | # | Stage | Goal | Output | Gate | Read |
 |---|-------|------|--------|------|------|
-| 1 | Intake | Understand the problem and the ideal result | Problem statement, Ideal Final Result (IFR), resource list | User confirms the restatement | `workflow/1-intake.md` |
+| 1 | Intake | Understand the problem and the ideal result | Problem statement, Ideal Final Result (IFR), resource list | User confirms the restatement (may merge with stage 2) | `workflow/1-intake.md` |
 | 2 | Contradiction | Find the conflict at the root | One technical contradiction, and a physical one when found | User picks or corrects it | `workflow/2-contradiction.md` |
 | 3 | Directions | Find where to look for a solution | 3-6 principles, each with why it fits | none | `workflow/3-directions.md` |
 | 4 | Actions | Turn directions into concrete steps | Ranked options, top 2-3 recommended | none | `workflow/4-actions.md` |
 | 5 | Validation | Test the options with Socratic questions | Approved option, objections and answers | Explicit user approval | `workflow/5-socratic.md` |
-| 6 | Plan | Deliver the result | Short plan in chat, full plan as a file | none | `workflow/6-plan.md` |
+| 6 | Plan | Deliver the result | Short plan in chat, full plan as a file, each with Resources, Watch for, Done when | none | `workflow/6-plan.md` |
 
 Loop-backs in stage 5: a new contradiction sends you back to stage 2; a
 missing constraint sends you back to stage 4.
 
+## Question budget
+
+Aim for a finished plan in about 5-8 user turns in guided mode.
+
+| Stage | Questions, at most | Then |
+|-------|--------------------|------|
+| 1 Intake | 2 clarifying questions | Confirm the restatement |
+| 2 Contradiction | 0 extra | Pick or correct the contradiction |
+| 5 Validation | 2 Socratic questions | Approve an option |
+
+- **Merge gates that have nothing to resolve.** If intake left no open
+  questions, show the restatement and the contradiction together and ask
+  once. If the last Socratic answer changes nothing, ask for approval in the
+  same message as your reply to it.
+- **Never skip the contradiction check**, but it can share a turn with the
+  stage 1 check.
+- Go past the budget only when the user asks for more ("dig deeper", "keep
+  questioning") or a loop-back needs it. After 8 user turns, offer to settle
+  on the best option so far.
+- Gaps you did not ask about go to open questions in the state block, not to
+  extra questions.
+
 ## Modes
 
-- **Guided** (default): all gates, one question at a time.
-- **Fast**: the user says "just give me options" or similar. Run stages 1-4
-  with a single check, offer 2-3 risk questions in stage 5, and let the user
-  skip stage 5 entirely.
+- **Guided** (default): every gate, within the question budget, one question
+  at a time.
+- **Fast**: the user says "just give me options" or similar. At most one
+  clarifying question, one combined check for stages 1-2, then up to 2 risk
+  questions in stage 5 that the user can skip.
 - **Autonomous**: no human can answer (a coding agent stuck on a trade-off, a
   subagent called by an orchestrator). Same stages; you answer the gates
   yourself and list every assumption. Read `workflow/autonomous.md`.
@@ -123,6 +148,6 @@ the conversation instead.
 > 3. Directions: speed maps to 25 Loss of time or 39 Productivity, quality to 27 Reliability. `--merge 25:27 39:27` ranks #10 Preliminary action first, then #1 Segmentation.
 > 4. Actions: pre-written answers for the top 20 ticket types (#10); split tickets into "instant" and "investigate" queues (#1).
 > 5. Validation: "Who would object?" -> senior agents fear canned replies. Answer: each senior owns and reviews five templates.
-> 6. Short plan in chat, full plan saved to `triz-plans/2026-10-21-support-speed-vs-quality.md`.
+> 6. Short plan in chat with Resources (macros, ticket history, nothing new), Watch for (reopen rate above 8%) and Done when (median first reply under 1 hour, reopens at or below 8%). Full plan saved to `triz-plans/2026-10-21-support-speed-vs-quality.md`.
 
 More worked examples live in `examples/`.

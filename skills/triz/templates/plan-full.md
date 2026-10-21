@@ -57,9 +57,30 @@ Why the winner won: <reason>
 
 - Secondary contradiction: <improving C worsens D>; next principle to try: #<n> <name>
 
-## 9. Success measures and review point
+## 9. Resources, watch for, done when
 
-- Measure: <metric and target>
+These three fields are required. Each one must be checkable without asking
+anyone's opinion: a number, a threshold, or a yes/no fact.
+
+**Resources**
+
+| Resource | Exists or new | Cost or effort | Used in step |
+|----------|---------------|----------------|--------------|
+| <resource from section 2> | exists | <none or small> | <step> |
+| <anything the plan adds> | new | <cost> | <step> |
+
+**Watch for**
+
+| Risk | Signal and threshold | Where to look | What to do if crossed |
+|------|----------------------|---------------|-----------------------|
+| <top risk> | <metric above or below a number> | <dashboard, log, person> | <fallback from section 8> |
+
+**Done when**
+
+| Metric | Baseline | Target | By |
+|--------|----------|--------|----|
+| <metric tied to the IFR> | <today's value, or "unknown"> | <number> | <date> |
+
 - Review on: <date>
 
 ## Assumptions (autonomous mode only)

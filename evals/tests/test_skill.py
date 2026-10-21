@@ -89,5 +89,43 @@ class SocraticBankTest(unittest.TestCase):
             self.assertEqual(len(questions), 5, s.splitlines()[0])
 
 
+class PlanFieldsTest(unittest.TestCase):
+    FIELDS = ["Resources", "Watch for", "Done when"]
+
+    def test_short_template_has_required_fields(self):
+        text = read("templates/plan-short.md")
+        for field in self.FIELDS:
+            self.assertIn(f"**{field}:**", text)
+
+    def test_full_template_has_required_fields(self):
+        text = read("templates/plan-full.md")
+        section = text.split("## 9.", 1)[1].split("\n## ", 1)[0]
+        for field in self.FIELDS:
+            self.assertIn(f"**{field}**", section)
+
+    def test_examples_fill_required_fields(self):
+        for path in sorted((SKILL / "examples").glob("*.md")):
+            if path.name == "TEMPLATE.md":
+                continue
+            plan = path.read_text(encoding="utf-8").split("## Short plan", 1)[1]
+            for field in self.FIELDS:
+                match = re.search(rf"^\*\*{field}:\*\* (.+)$", plan, re.M)
+                self.assertIsNotNone(match, f"{path.name}: {field}")
+            for field in ["Watch for", "Done when"]:
+                line = re.search(rf"^\*\*{field}:\*\* (.+)$", plan, re.M).group(1)
+                self.assertRegex(line, r"\d", f"{path.name}: {field} has no number")
+
+
+class QuestionBudgetTest(unittest.TestCase):
+    def test_skill_states_budget(self):
+        text = read("SKILL.md")
+        self.assertIn("## Question budget", text)
+        self.assertIn("5-8 user turns", text)
+
+    def test_stage_files_cap_questions(self):
+        self.assertIn("at most 2 clarifying questions", read("workflow/1-intake.md"))
+        self.assertIn("at most 2", read("workflow/5-socratic.md"))
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -4,7 +4,10 @@ Use this mode when no human can answer: a coding agent stuck on a design
 trade-off, a subagent called by an orchestrator, a batch job. It starts when
 the caller asks for it, or when you have no way to ask anyone.
 
-The six stages stay the same. What changes is who answers the gates.
+The six stages stay the same. What changes is who answers the gates. The
+question budget in SKILL.md does not apply, since questions cost no one's
+time: the critic pass answers all six question types. The required plan
+fields (Resources, Watch for, Done when) still apply.
 
 | Stage | Guided | Autonomous |
 |-------|--------|------------|

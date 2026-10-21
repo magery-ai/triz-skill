@@ -40,7 +40,7 @@ body:
     id: plan
     attributes:
       label: Short plan
-      description: The short plan the skill produced
+      description: The short plan the skill produced, including the Resources, Watch for and Done when lines
     validations:
       required: true
   - type: textarea

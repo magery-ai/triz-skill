@@ -6,5 +6,6 @@
 1. <action> (<who>, <by when>)
 2. <action> (<who>, <by when>)
 3. <action> (<who>, <by when>)
-**Watch for:** <top risk and the signal that it is happening>
-**Done when:** <measurable result tied to the IFR>
+**Resources:** <what the plan uses that already exists>; new: <anything new and its cost, or "nothing new">
+**Watch for:** <top risk>: <signal and threshold>, then <what to do>
+**Done when:** <metric> <target> by <date or time window>, tied to the IFR

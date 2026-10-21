@@ -49,8 +49,9 @@ plan. The user approves option 1 now and option 2 for the next quarter.
 1. Add a purge call to the admin tool's save handler (backend, this sprint)
 2. Alert when a purge fails (backend, this sprint)
 3. Spike the split page with a 5-second price fragment (backend, next quarter, proposed)
-**Watch for:** purge error rate above 0.1%
-**Done when:** stale-price complaints drop to zero with p95 still under 100 ms
+**Resources:** the admin tool's save handler, the CDN purge API (free on the current plan), the existing alerting; new: nothing
+**Watch for:** purge error rate above 0.1% in a day, then shorten the TTL fallback until the cause is fixed
+**Done when:** zero stale-price complaints for 2 weeks with p95 still under 100 ms, by the end of next sprint
 
 ## What made this work
 
