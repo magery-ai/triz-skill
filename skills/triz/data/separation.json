@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "description": "The four separation principles for physical contradictions (element E must be P and not-P), each with the inventive principles most often linked to it. The links are a common teaching grouping, not part of the 1971 matrix, and differ a little between sources.",
+    "verified": false
+  },
+  "separations": [
+    {
+      "type": "time",
+      "question": "Can E be P at one moment and not-P at another?",
+      "principle_ids": [9, 10, 11, 15, 16, 18, 19, 20, 21, 29, 34, 37]
+    },
+    {
+      "type": "space",
+      "question": "Can E be P in one place and not-P in another?",
+      "principle_ids": [1, 2, 3, 4, 7, 13, 14, 17, 24, 26, 30]
+    },
+    {
+      "type": "condition",
+      "question": "Can E be P under one condition and not-P under another?",
+      "principle_ids": [28, 29, 31, 32, 35, 36, 38, 39, 40]
+    },
+    {
+      "type": "system level",
+      "question": "Can the whole be P while its parts are not-P, or the reverse?",
+      "principle_ids": [1, 5, 6, 7, 8, 12, 22, 23, 25, 27, 33, 40]
+    }
+  ]
+}

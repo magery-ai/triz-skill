@@ -7,8 +7,9 @@ and the classic Altshuller contradiction matrix to find solution directions,
 turns them into actions that fit your situation, checks them with you, and
 hands back a short plan and a full one.
 
-> **Status: v0.1 skeleton.** The workflow is drafted; the matrix and principle
-> data arrive in v0.2. See the [roadmap](#roadmap).
+> **Status: v0.2 data.** The workflow is drafted, and the matrix, principle
+> data and lookup script are in. The matrix is cross-checked between two
+> copies; the check against the book comes in v1.0. See the [roadmap](#roadmap).
 
 ## What a session looks like
 
@@ -135,14 +136,19 @@ skills/triz/
 ├── SKILL.md            # trigger, rules, stage map, modes, state block
 ├── workflow/           # one file per stage, plus autonomous.md
 ├── templates/          # plan-short.md, plan-full.md
+├── data/               # parameters, principles, matrix, separation, check status
+├── scripts/            # matrix_lookup.py (standard library only)
 └── examples/           # worked examples (TEMPLATE.md to start)
+evals/tests/            # data and script tests, run in CI
 ```
+
+Run the tests with `python -m unittest discover -s evals/tests`.
 
 ## Roadmap
 
-- **v0.1 Skeleton:** SKILL.md, draft workflow, templates. *(this release)*
+- **v0.1 Skeleton:** SKILL.md, draft workflow, templates.
 - **v0.2 Data:** 39 parameters, 40 principles, 39x39 matrix, separation
-  principles, lookup script, data tests and CI.
+  principles, lookup script, data tests and CI. *(this release)*
 - **v0.3 Workflow:** full stage files, domain-mapping guide for non-engineering
   problems, Socratic question bank.
 - **v0.4 Evals and examples:** scenario evals, trigger tests, worked examples.
@@ -154,6 +160,12 @@ skills/triz/
 The skill uses only the classic 1971 Altshuller 39x39 contradiction matrix and
 the 40 inventive principles. Descriptions and data are written in this
 project's own words and format.
+
+Matrix values come from the [triz40.com](https://www.triz40.com/aff_Matrix_TRIZ.php)
+online matrix (Source: TRIZ40 - www.triz40.com), cross-checked cell by cell
+against a second copy. Differences are logged in
+`skills/triz/data/matrix-discrepancies.md`. The primary reference for the
+v1.0 check is Altshuller's *40 Principles* (Shulyak and Rodman, 1997).
 
 ## License
 

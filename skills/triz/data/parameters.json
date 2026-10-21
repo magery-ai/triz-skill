@@ -1,0 +1,430 @@
+{
+  "_meta": {
+    "description": "The 39 engineering parameters of the classic Altshuller contradiction matrix. Names follow the usual English numbering; definitions and aliases are this project's own wording.",
+    "count": 39
+  },
+  "parameters": [
+    {
+      "id": 1,
+      "name": "Weight of moving object",
+      "definition": "The mass of an object that moves or is moved, and the force gravity puts on it.",
+      "aliases": [
+        "mass",
+        "heaviness",
+        "payload weight",
+        "weight of a vehicle"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Weight of stationary object",
+      "definition": "The mass of an object that stays in place, and the load it puts on its support.",
+      "aliases": [
+        "dead load",
+        "weight of a building",
+        "fixed equipment weight"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Length of moving object",
+      "definition": "Any linear size of a moving object: length, width, height or depth.",
+      "aliases": [
+        "size",
+        "dimension",
+        "reach",
+        "span of a moving part"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Length of stationary object",
+      "definition": "Any linear size of an object that does not move.",
+      "aliases": [
+        "footprint length",
+        "span",
+        "height of a structure"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Area of moving object",
+      "definition": "The surface size of a moving object, inside or outside.",
+      "aliases": [
+        "surface area",
+        "contact area of a moving part"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Area of stationary object",
+      "definition": "The surface size of an object that does not move.",
+      "aliases": [
+        "floor space",
+        "footprint",
+        "surface of a fixed part"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Volume of moving object",
+      "definition": "The space a moving object takes up or encloses.",
+      "aliases": [
+        "bulk",
+        "capacity of a moving container",
+        "size in 3D"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Volume of stationary object",
+      "definition": "The space a stationary object takes up or encloses.",
+      "aliases": [
+        "storage space",
+        "room taken",
+        "capacity of a tank"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Speed",
+      "definition": "How fast an object moves or a process runs: distance or progress per unit of time.",
+      "aliases": [
+        "velocity",
+        "rate",
+        "pace",
+        "how fast"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Force",
+      "definition": "Any push or pull that changes an object's motion or shape.",
+      "aliases": [
+        "torque",
+        "load",
+        "effort applied",
+        "push"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Stress or pressure",
+      "definition": "Force per unit of area acting on or inside an object.",
+      "aliases": [
+        "tension",
+        "strain",
+        "compression",
+        "load per area",
+        "pressure"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Shape",
+      "definition": "The outer form and outline of an object.",
+      "aliases": [
+        "form",
+        "geometry",
+        "contour",
+        "layout"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Stability of the object's composition",
+      "definition": "How well an object keeps its integrity and the relation of its parts over time: resistance to decay, wear and breaking apart.",
+      "aliases": [
+        "integrity",
+        "consistency",
+        "coherence",
+        "chemical stability",
+        "structural stability"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Strength",
+      "definition": "How much force an object can take before it breaks.",
+      "aliases": [
+        "robustness",
+        "toughness",
+        "durability under load",
+        "resistance to breaking"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Duration of action of moving object",
+      "definition": "How long a moving object can do its job: service life or time between failures.",
+      "aliases": [
+        "lifetime",
+        "service life",
+        "endurance",
+        "battery life of a mobile device"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Duration of action by stationary object",
+      "definition": "How long a stationary object can do its job.",
+      "aliases": [
+        "lifetime of fixed equipment",
+        "service life of a structure"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Temperature",
+      "definition": "How hot or cold an object or system is, including heat it takes in or gives off.",
+      "aliases": [
+        "heat",
+        "thermal condition",
+        "cooling",
+        "heating"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Illumination intensity",
+      "definition": "Light falling on or coming from an object, and its brightness, color and quality.",
+      "aliases": [
+        "brightness",
+        "light",
+        "visibility",
+        "lighting"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Use of energy by moving object",
+      "definition": "The energy a moving object needs to do its job.",
+      "aliases": [
+        "energy consumption of a moving part",
+        "fuel use",
+        "battery drain"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Use of energy by stationary object",
+      "definition": "The energy a stationary object needs to do its job.",
+      "aliases": [
+        "standby power",
+        "energy consumption of fixed equipment"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Power",
+      "definition": "The rate at which work is done or energy is used.",
+      "aliases": [
+        "output",
+        "wattage",
+        "horsepower",
+        "capacity to do work"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Loss of energy",
+      "definition": "Energy that is wasted and does not help the useful job.",
+      "aliases": [
+        "energy waste",
+        "heat loss",
+        "inefficiency",
+        "friction loss"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Loss of substance",
+      "definition": "Material, parts or fluids that are lost or wasted, partly or fully, for a time or for good.",
+      "aliases": [
+        "material waste",
+        "leakage",
+        "scrap",
+        "loss of resources"
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Loss of information",
+      "definition": "Data or knowledge that is lost or becomes unavailable, partly or fully.",
+      "aliases": [
+        "data loss",
+        "lost knowledge",
+        "missing information",
+        "poor communication"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Loss of time",
+      "definition": "Time that is wasted, or the total time an activity takes.",
+      "aliases": [
+        "delay",
+        "lead time",
+        "waiting",
+        "time to market",
+        "latency",
+        "turnaround time"
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Quantity of substance",
+      "definition": "The amount or number of materials, parts or elements in a system.",
+      "aliases": [
+        "amount of material",
+        "number of parts",
+        "stock",
+        "inventory",
+        "headcount"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Reliability",
+      "definition": "How well a system keeps doing its job as intended, without failing.",
+      "aliases": [
+        "dependability",
+        "quality",
+        "consistency of results",
+        "uptime",
+        "failure rate"
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Measurement accuracy",
+      "definition": "How close a measured value is to the true value.",
+      "aliases": [
+        "measurement precision",
+        "accuracy of data",
+        "metric accuracy"
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Manufacturing precision",
+      "definition": "How closely the real product matches its specification.",
+      "aliases": [
+        "tolerance",
+        "production accuracy",
+        "build quality",
+        "conformance to spec"
+      ]
+    },
+    {
+      "id": 30,
+      "name": "External harm affects the object",
+      "definition": "How sensitive an object is to harmful effects from outside.",
+      "aliases": [
+        "vulnerability",
+        "exposure to risk",
+        "external threats",
+        "security against attack"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Object-generated harmful factors",
+      "definition": "Harmful effects an object itself produces that lower efficiency or quality.",
+      "aliases": [
+        "side effects",
+        "emissions",
+        "noise",
+        "harmful by-products",
+        "technical debt"
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Ease of manufacture",
+      "definition": "How easy and cheap it is to make the object.",
+      "aliases": [
+        "manufacturability",
+        "ease of production",
+        "cost to build",
+        "ease of implementation"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Ease of operation",
+      "definition": "How simple the object is to use: few steps, few people, little skill or training needed.",
+      "aliases": [
+        "usability",
+        "convenience",
+        "ease of use",
+        "user friendliness"
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Ease of repair",
+      "definition": "How easy it is to fix, service or maintain the object.",
+      "aliases": [
+        "maintainability",
+        "serviceability",
+        "ease of maintenance"
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Adaptability or versatility",
+      "definition": "How well an object copes with changing conditions or can be used in different ways.",
+      "aliases": [
+        "flexibility",
+        "versatility",
+        "configurability",
+        "scalability"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Device complexity",
+      "definition": "The number and variety of elements in a system and of the links between them.",
+      "aliases": [
+        "complexity",
+        "number of components",
+        "system complexity"
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Difficulty of detecting and measuring",
+      "definition": "How hard, slow or costly it is to observe, check or measure the system.",
+      "aliases": [
+        "observability",
+        "testability",
+        "hard to monitor",
+        "difficulty of control"
+      ]
+    },
+    {
+      "id": 38,
+      "name": "Extent of automation",
+      "definition": "How far the system does its job without human work or attention.",
+      "aliases": [
+        "automation",
+        "autonomy",
+        "manual effort",
+        "self-running"
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Productivity",
+      "definition": "The amount of useful output per unit of time or per unit of cost.",
+      "aliases": [
+        "throughput",
+        "output rate",
+        "efficiency",
+        "capacity",
+        "yield"
+      ]
+    }
+  ]
+}

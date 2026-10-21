@@ -1,0 +1,700 @@
+{
+  "_meta": {
+    "description": "The 40 inventive principles of TRIZ. Names follow the usual English numbering; sub-principles and examples are this project's own wording.",
+    "count": 40
+  },
+  "principles": [
+    {
+      "id": 1,
+      "name": "Segmentation",
+      "aliases": [
+        "fragmentation",
+        "division"
+      ],
+      "subprinciples": [
+        "Split an object into independent parts.",
+        "Make the object easy to take apart and put back together.",
+        "Increase how finely the object is divided."
+      ],
+      "examples": {
+        "engineering": "Modular furniture that ships flat and bolts together.",
+        "software": "Split a monolith into services that deploy on their own.",
+        "business": "Split customers into segments with their own offers.",
+        "everyday": "Cut a big chore into 15-minute pieces."
+      }
+    },
+    {
+      "id": 2,
+      "name": "Taking out",
+      "aliases": [
+        "extraction",
+        "separation"
+      ],
+      "subprinciples": [
+        "Remove the part or property that causes trouble.",
+        "Pull out only the part or property you actually need."
+      ],
+      "examples": {
+        "engineering": "Put a noisy compressor outside the building.",
+        "software": "Move slow work out of the request path into a background job.",
+        "business": "Outsource a non-core task such as payroll.",
+        "everyday": "Leave the phone in another room while you work."
+      }
+    },
+    {
+      "id": 3,
+      "name": "Local quality",
+      "aliases": [
+        "local conditions"
+      ],
+      "subprinciples": [
+        "Change a uniform structure or environment into a non-uniform one.",
+        "Let each part of an object do a different job.",
+        "Put each part in the conditions that suit it best."
+      ],
+      "examples": {
+        "engineering": "A hammer with a hard face and a shock-absorbing handle.",
+        "software": "Cache hot data in memory and keep cold data on cheap storage.",
+        "business": "Price differently by region.",
+        "everyday": "A desk with a standing area and a sitting area."
+      }
+    },
+    {
+      "id": 4,
+      "name": "Asymmetry",
+      "aliases": [],
+      "subprinciples": [
+        "Replace a symmetric form with an asymmetric one.",
+        "If it is already asymmetric, make it more so."
+      ],
+      "examples": {
+        "engineering": "A keyed plug that only fits one way.",
+        "software": "Give reads many replicas and writes one primary.",
+        "business": "Spend more on the few accounts that bring most revenue.",
+        "everyday": "An offset handle on a mug so it does not tip."
+      }
+    },
+    {
+      "id": 5,
+      "name": "Merging",
+      "aliases": [
+        "consolidation",
+        "combining"
+      ],
+      "subprinciples": [
+        "Bring together identical or related objects, or objects meant for related operations.",
+        "Make operations run at the same time or next to each other."
+      ],
+      "examples": {
+        "engineering": "Twin-blade razors.",
+        "software": "Batch many small writes into one request.",
+        "business": "Combine two teams that hand work to each other all day.",
+        "everyday": "Cook a week of lunches in one session."
+      }
+    },
+    {
+      "id": 6,
+      "name": "Universality",
+      "aliases": [
+        "multi-function"
+      ],
+      "subprinciples": [
+        "Let one object do several jobs so other objects are no longer needed."
+      ],
+      "examples": {
+        "engineering": "A sofa that turns into a bed.",
+        "software": "One config file that drives build, test and deploy.",
+        "business": "Staff who handle both sales and support for small clients.",
+        "everyday": "A phone that is also a camera, map and wallet."
+      }
+    },
+    {
+      "id": 7,
+      "name": "Nested doll",
+      "aliases": [
+        "nesting",
+        "matryoshka"
+      ],
+      "subprinciples": [
+        "Put one object inside another, and that one inside a third.",
+        "Let one part pass through a cavity in another."
+      ],
+      "examples": {
+        "engineering": "Telescopic antennas; stacking cups.",
+        "software": "Containers inside VMs; nested layouts in a UI.",
+        "business": "A company inside a company for a new product line.",
+        "everyday": "Store small bags inside a large bag."
+      }
+    },
+    {
+      "id": 8,
+      "name": "Anti-weight",
+      "aliases": [
+        "counterweight"
+      ],
+      "subprinciples": [
+        "Balance an object's weight by joining it with something that gives lift.",
+        "Balance weight with forces from the environment, such as air, water or magnetism."
+      ],
+      "examples": {
+        "engineering": "A counterweight on a lift or crane.",
+        "software": "Offset peak load with spare capacity that scales in when idle.",
+        "business": "Balance a seasonal business with a counter-seasonal product.",
+        "everyday": "Use a trolley so you do not carry the bags."
+      }
+    },
+    {
+      "id": 9,
+      "name": "Preliminary anti-action",
+      "aliases": [
+        "prior counteraction"
+      ],
+      "subprinciples": [
+        "If an action will have harmful effects too, counter them in advance.",
+        "Put stress into an object ahead of time that opposes the stress it will meet later."
+      ],
+      "examples": {
+        "engineering": "Pre-stressed concrete beams.",
+        "software": "Add rate limits before a launch to protect the database.",
+        "business": "Negotiate exit terms before signing a partnership.",
+        "everyday": "Take a vaccine before travelling."
+      }
+    },
+    {
+      "id": 10,
+      "name": "Preliminary action",
+      "aliases": [
+        "prior action",
+        "do it in advance"
+      ],
+      "subprinciples": [
+        "Do the needed change, fully or in part, before it is needed.",
+        "Place objects in advance where they can act at once from the most convenient spot."
+      ],
+      "examples": {
+        "engineering": "Pre-glued wallpaper.",
+        "software": "Precompute and cache results before users ask.",
+        "business": "Write answers to common questions before customers ask them.",
+        "everyday": "Lay out clothes the night before."
+      }
+    },
+    {
+      "id": 11,
+      "name": "Beforehand cushioning",
+      "aliases": [
+        "cushion in advance",
+        "backup"
+      ],
+      "subprinciples": [
+        "Make up for low reliability with emergency measures prepared in advance."
+      ],
+      "examples": {
+        "engineering": "A parachute with a reserve chute.",
+        "software": "Automatic failover to a standby replica; backups.",
+        "business": "A cash reserve for a bad quarter.",
+        "everyday": "Keep a spare key with a neighbour."
+      }
+    },
+    {
+      "id": 12,
+      "name": "Equipotentiality",
+      "aliases": [
+        "equal level"
+      ],
+      "subprinciples": [
+        "Change working conditions so the object does not need to be raised or lowered.",
+        "Remove the need to fight a field or gradient by keeping things on one level."
+      ],
+      "examples": {
+        "engineering": "A mechanic's pit so the car does not need lifting.",
+        "software": "Keep services on the same version so no translation layer is needed.",
+        "business": "Flatten approval levels so requests do not move up and down the hierarchy.",
+        "everyday": "Keep the things you use daily at arm height."
+      }
+    },
+    {
+      "id": 13,
+      "name": "The other way round",
+      "aliases": [
+        "inversion",
+        "do it inversely"
+      ],
+      "subprinciples": [
+        "Do the opposite of the usual action.",
+        "Make the moving part fixed and the fixed part moving.",
+        "Turn the object or process upside down."
+      ],
+      "examples": {
+        "engineering": "A treadmill: the floor moves, the runner stays.",
+        "software": "Push notifications instead of polling.",
+        "business": "Customers come to you instead of field sales visiting them.",
+        "everyday": "Bring the laundry basket to the wardrobe, not the clothes to the basket."
+      }
+    },
+    {
+      "id": 14,
+      "name": "Spheroidality",
+      "aliases": [
+        "curvature"
+      ],
+      "subprinciples": [
+        "Use curves instead of straight lines, and spheres instead of cubes.",
+        "Use rollers, balls and spirals.",
+        "Switch from straight motion to rotation, or use centrifugal force."
+      ],
+      "examples": {
+        "engineering": "Arches and domes carry load better than flat roofs.",
+        "software": "A ring buffer instead of an ever-growing queue.",
+        "business": "Circular, repeat-purchase models instead of one-off sales.",
+        "everyday": "A round-edged table that nobody bumps into."
+      }
+    },
+    {
+      "id": 15,
+      "name": "Dynamics",
+      "aliases": [
+        "dynamism",
+        "adaptivity"
+      ],
+      "subprinciples": [
+        "Let the object or its environment adjust to work best at each stage.",
+        "Split the object into parts that can move relative to each other.",
+        "Make a rigid or fixed object movable or adaptable."
+      ],
+      "examples": {
+        "engineering": "Adjustable car seats and mirrors.",
+        "software": "Autoscaling; feature flags that change behaviour at runtime.",
+        "business": "Dynamic pricing.",
+        "everyday": "Adjustable shelves."
+      }
+    },
+    {
+      "id": 16,
+      "name": "Partial or excessive actions",
+      "aliases": [
+        "do a little less or more"
+      ],
+      "subprinciples": [
+        "If exactly 100% is hard to get, do slightly less or slightly more and the problem may become easy."
+      ],
+      "examples": {
+        "engineering": "Overfill a mould, then trim the excess.",
+        "software": "Ship a rough first version, then refine.",
+        "business": "Overbook slightly to make up for no-shows.",
+        "everyday": "Buy a bit too much paint rather than run out mid-wall."
+      }
+    },
+    {
+      "id": 17,
+      "name": "Another dimension",
+      "aliases": [
+        "move to a new dimension"
+      ],
+      "subprinciples": [
+        "Move from one dimension to two, or from two to three.",
+        "Stack objects in layers instead of one layer.",
+        "Tilt or turn the object on its side.",
+        "Use the other side of a surface."
+      ],
+      "examples": {
+        "engineering": "Multi-storey car parks; double-sided circuit boards.",
+        "software": "Add a second index; tag data instead of using one folder tree.",
+        "business": "Add a new axis of value, such as service on top of product.",
+        "everyday": "Wall-mounted storage."
+      }
+    },
+    {
+      "id": 18,
+      "name": "Mechanical vibration",
+      "aliases": [
+        "oscillation"
+      ],
+      "subprinciples": [
+        "Make an object vibrate or oscillate.",
+        "Raise the frequency, up to ultrasonic.",
+        "Use resonance or replace mechanical vibration with electric or piezo vibration."
+      ],
+      "examples": {
+        "engineering": "Vibrating concrete to remove air bubbles.",
+        "software": "Jitter on retries so clients do not hit the server at once.",
+        "business": "Short regular pulses of marketing instead of one big push.",
+        "everyday": "Shake a jar to settle its contents."
+      }
+    },
+    {
+      "id": 19,
+      "name": "Periodic action",
+      "aliases": [
+        "pulsing"
+      ],
+      "subprinciples": [
+        "Replace continuous action with periodic or pulsed action.",
+        "Change the frequency of a periodic action.",
+        "Use the pauses between pulses for another action."
+      ],
+      "examples": {
+        "engineering": "Pulsed welding; flashing warning lights.",
+        "software": "Batch jobs on a schedule instead of constant polling.",
+        "business": "Weekly check-ins instead of constant status updates.",
+        "everyday": "Interval training."
+      }
+    },
+    {
+      "id": 20,
+      "name": "Continuity of useful action",
+      "aliases": [
+        "continuous flow"
+      ],
+      "subprinciples": [
+        "Keep all parts working at full load all the time.",
+        "Remove idle runs and interruptions."
+      ],
+      "examples": {
+        "engineering": "A continuous casting line instead of batch moulds.",
+        "software": "Streaming instead of nightly batches; CI that runs on every push.",
+        "business": "Follow-the-sun support across time zones.",
+        "everyday": "Listen to a podcast while commuting."
+      }
+    },
+    {
+      "id": 21,
+      "name": "Skipping",
+      "aliases": [
+        "rushing through",
+        "hurrying"
+      ],
+      "subprinciples": [
+        "Run a harmful or hazardous step at very high speed."
+      ],
+      "examples": {
+        "engineering": "Cut plastic tubes fast so the heat cannot deform them.",
+        "software": "Run a risky migration in one short window rather than spread out.",
+        "business": "Rip off the bandage: announce bad news quickly and once.",
+        "everyday": "Pull off a plaster in one go."
+      }
+    },
+    {
+      "id": 22,
+      "name": "Blessing in disguise",
+      "aliases": [
+        "turn harm into benefit",
+        "lemons to lemonade"
+      ],
+      "subprinciples": [
+        "Use a harmful factor to get a positive effect.",
+        "Remove a harmful factor by adding it to another harmful factor.",
+        "Increase a harmful factor until it stops being harmful."
+      ],
+      "examples": {
+        "engineering": "Waste heat from a power plant heats nearby homes.",
+        "software": "Turn error logs into a dashboard of what users actually try to do.",
+        "business": "Turn customer complaints into a public roadmap.",
+        "everyday": "Use a power cut as a reason for a candlelit dinner."
+      }
+    },
+    {
+      "id": 23,
+      "name": "Feedback",
+      "aliases": [],
+      "subprinciples": [
+        "Add feedback to improve a process or action.",
+        "If there is feedback already, change its size or influence."
+      ],
+      "examples": {
+        "engineering": "A thermostat controlling a heater.",
+        "software": "Alerting on error rates; canary deploys that roll back on bad metrics.",
+        "business": "Net promoter surveys after each support case.",
+        "everyday": "A fitness tracker that nudges you to move."
+      }
+    },
+    {
+      "id": 24,
+      "name": "Intermediary",
+      "aliases": [
+        "mediator"
+      ],
+      "subprinciples": [
+        "Use an in-between object to carry or transfer an action.",
+        "Join an object for a while to another one that is easy to remove."
+      ],
+      "examples": {
+        "engineering": "A drill guide that holds the bit at the right angle.",
+        "software": "An API gateway or message queue between services.",
+        "business": "A broker or agent between buyer and seller.",
+        "everyday": "Use a cutting board instead of cutting on the counter."
+      }
+    },
+    {
+      "id": 25,
+      "name": "Self-service",
+      "aliases": [],
+      "subprinciples": [
+        "Let the object serve, maintain or repair itself.",
+        "Use waste material or energy the object already produces."
+      ],
+      "examples": {
+        "engineering": "Self-sharpening blades; regenerative braking.",
+        "software": "Self-healing services that restart on failure; auto-generated docs.",
+        "business": "Self-service help centre and checkout.",
+        "everyday": "A self-cleaning oven."
+      }
+    },
+    {
+      "id": 26,
+      "name": "Copying",
+      "aliases": [
+        "copy"
+      ],
+      "subprinciples": [
+        "Use a simple, cheap copy instead of an object that is unavailable, fragile or costly.",
+        "Replace an object with an optical copy or image, possibly scaled.",
+        "Move from visible copies to infrared or ultraviolet ones."
+      ],
+      "examples": {
+        "engineering": "Wind-tunnel tests on a scale model.",
+        "software": "Test against a staging copy or a mock instead of production.",
+        "business": "A pilot in one city before a national launch.",
+        "everyday": "Try furniture in your room with an AR app."
+      }
+    },
+    {
+      "id": 27,
+      "name": "Cheap short-living objects",
+      "aliases": [
+        "disposable"
+      ],
+      "subprinciples": [
+        "Replace a costly object with several cheap ones, accepting shorter life."
+      ],
+      "examples": {
+        "engineering": "Disposable surgical instruments.",
+        "software": "Throwaway prototypes; ephemeral test environments.",
+        "business": "Short low-cost experiments instead of one big bet.",
+        "everyday": "Paper plates for a party."
+      }
+    },
+    {
+      "id": 28,
+      "name": "Mechanics substitution",
+      "aliases": [
+        "replace mechanical system",
+        "use fields"
+      ],
+      "subprinciples": [
+        "Replace a mechanical system with an optical, acoustic, thermal or smell-based one.",
+        "Use electric, magnetic or electromagnetic fields to act on the object.",
+        "Move from fixed to changing fields, or from unstructured to structured ones."
+      ],
+      "examples": {
+        "engineering": "Touchless sensors instead of mechanical switches.",
+        "software": "Replace manual checks with automated monitors or rules.",
+        "business": "Replace paper forms with digital workflows.",
+        "everyday": "A motion-sensor light instead of a switch."
+      }
+    },
+    {
+      "id": 29,
+      "name": "Pneumatics and hydraulics",
+      "aliases": [
+        "fluids"
+      ],
+      "subprinciples": [
+        "Use gas or liquid parts instead of solid ones: inflatable, liquid-filled, air-cushioned or hydraulic."
+      ],
+      "examples": {
+        "engineering": "Air bags; hydraulic lifts.",
+        "software": "Elastic resource pools that flow to where load is.",
+        "business": "Flexible staffing pools that move between teams.",
+        "everyday": "An inflatable mattress for guests."
+      }
+    },
+    {
+      "id": 30,
+      "name": "Flexible shells and thin films",
+      "aliases": [
+        "membrane"
+      ],
+      "subprinciples": [
+        "Replace solid structures with flexible shells or thin films.",
+        "Isolate an object from its surroundings with a thin film."
+      ],
+      "examples": {
+        "engineering": "Shrink wrap; a thin protective coating.",
+        "software": "A thin adapter layer around a legacy system.",
+        "business": "A light brand shell around a white-label product.",
+        "everyday": "Cling film over a bowl."
+      }
+    },
+    {
+      "id": 31,
+      "name": "Porous materials",
+      "aliases": [
+        "holes"
+      ],
+      "subprinciples": [
+        "Make an object porous or add porous parts.",
+        "If it is already porous, fill the pores with something useful."
+      ],
+      "examples": {
+        "engineering": "Porous bearings filled with oil.",
+        "software": "Leave slack in the schedule that can absorb urgent work.",
+        "business": "Open, permeable team boundaries for knowledge flow.",
+        "everyday": "A sponge that holds soap."
+      }
+    },
+    {
+      "id": 32,
+      "name": "Color changes",
+      "aliases": [
+        "optical changes"
+      ],
+      "subprinciples": [
+        "Change the color of an object or its surroundings.",
+        "Change how transparent the object or its surroundings are.",
+        "Use colored additives or markers to see things that are hard to see."
+      ],
+      "examples": {
+        "engineering": "Temperature-sensitive paint that changes color when hot.",
+        "software": "Color-coded status and diff highlighting.",
+        "business": "Visual boards that show work state at a glance.",
+        "everyday": "Color-coded keys or folders."
+      }
+    },
+    {
+      "id": 33,
+      "name": "Homogeneity",
+      "aliases": [
+        "same material"
+      ],
+      "subprinciples": [
+        "Make objects that interact out of the same material, or a material with similar properties."
+      ],
+      "examples": {
+        "engineering": "A container made of the same material as its contents to avoid reactions.",
+        "software": "One language and toolchain across front end and back end.",
+        "business": "Shared values and vocabulary across merged teams.",
+        "everyday": "Use one brand of charger for all devices."
+      }
+    },
+    {
+      "id": 34,
+      "name": "Discarding and recovering",
+      "aliases": [
+        "rejecting and regenerating"
+      ],
+      "subprinciples": [
+        "Let parts that have done their job go away (dissolve, evaporate, drop off) or change them while in use.",
+        "Restore used-up parts while the system runs."
+      ],
+      "examples": {
+        "engineering": "Dissolving capsules; rocket stages that drop off.",
+        "software": "Temporary scaffolding code removed after migration; garbage collection.",
+        "business": "Sunset products that served their purpose.",
+        "everyday": "Biodegradable plant pots that go into the soil."
+      }
+    },
+    {
+      "id": 35,
+      "name": "Parameter changes",
+      "aliases": [
+        "transform properties"
+      ],
+      "subprinciples": [
+        "Change the physical state, such as solid, liquid or gas.",
+        "Change concentration, consistency or density.",
+        "Change flexibility.",
+        "Change temperature or another property."
+      ],
+      "examples": {
+        "engineering": "Freeze liquids to transport them; concentrate juice.",
+        "software": "Change consistency levels; compress data; change cache TTL.",
+        "business": "Change pricing from one-off to subscription.",
+        "everyday": "Freeze leftovers to keep them longer."
+      }
+    },
+    {
+      "id": 36,
+      "name": "Phase transitions",
+      "aliases": [
+        "phase change"
+      ],
+      "subprinciples": [
+        "Use effects that happen during a change of phase, such as change of volume or release or absorption of heat."
+      ],
+      "examples": {
+        "engineering": "Heat pipes that move heat by evaporation and condensation.",
+        "software": "Use the moment of a state change (deploy, failover) to run checks.",
+        "business": "Use a reorganisation as the moment to change habits.",
+        "everyday": "Ice packs that absorb heat as they melt."
+      }
+    },
+    {
+      "id": 37,
+      "name": "Thermal expansion",
+      "aliases": [
+        "expansion"
+      ],
+      "subprinciples": [
+        "Use the expansion or contraction of materials with temperature.",
+        "Combine materials with different expansion rates."
+      ],
+      "examples": {
+        "engineering": "Bimetallic strips in thermostats.",
+        "software": "Capacity that grows with demand and shrinks after it.",
+        "business": "Teams that grow and shrink with the project phase.",
+        "everyday": "Run a stuck jar lid under hot water."
+      }
+    },
+    {
+      "id": 38,
+      "name": "Strong oxidants",
+      "aliases": [
+        "accelerated oxidation",
+        "boost the environment"
+      ],
+      "subprinciples": [
+        "Replace normal air with enriched air, enriched air with oxygen, and so on, to speed up a process.",
+        "Use a more active environment or agent."
+      ],
+      "examples": {
+        "engineering": "Oxygen-enriched combustion for higher temperatures.",
+        "software": "Run critical jobs on dedicated, faster hardware.",
+        "business": "Put a small tiger team on an urgent project.",
+        "everyday": "Use a pressure cooker."
+      }
+    },
+    {
+      "id": 39,
+      "name": "Inert atmosphere",
+      "aliases": [
+        "inert environment"
+      ],
+      "subprinciples": [
+        "Replace the normal environment with an inert one.",
+        "Add neutral parts or inert additives to the object."
+      ],
+      "examples": {
+        "engineering": "Argon shielding gas in welding.",
+        "software": "Run tests in an isolated sandbox with no side effects.",
+        "business": "A quiet room or no-meeting day for focused work.",
+        "everyday": "Vacuum-sealed food bags."
+      }
+    },
+    {
+      "id": 40,
+      "name": "Composite materials",
+      "aliases": [
+        "composites"
+      ],
+      "subprinciples": [
+        "Replace a uniform material with a composite one."
+      ],
+      "examples": {
+        "engineering": "Carbon fibre in resin; reinforced concrete.",
+        "software": "Combine rules and machine learning in one decision system.",
+        "business": "Mixed teams of senior and junior staff.",
+        "everyday": "A layered outfit for changing weather."
+      }
+    }
+  ]
+}
