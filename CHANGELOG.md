@@ -6,6 +6,13 @@
   (Shulyak and Rodman, 1997).
 - Improve autonomous output, where the baseline won 2 of 3 eval cases.
 
+## Unreleased
+
+- Two worked examples from AI engineering, linked from the README: a model
+  router that halves the inference bill without worse answers (fast mode),
+  and OCR with field checks in place of an LLM for invoice extraction
+  (guided mode).
+
 ## 1.1.0 (2026-10-21)
 
 - First full with/without eval run (13 cases, blind grading): the skill
