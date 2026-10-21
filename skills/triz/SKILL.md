@@ -65,9 +65,26 @@ missing constraint sends you back to stage 4.
 
 ## Tools
 
-The matrix and principle data (`data/`) and the lookup script
-(`scripts/matrix_lookup.py`) arrive in v0.2. Until then, use your own knowledge
-of the classic matrix and say that the lookup is unverified.
+Look up the matrix with the script (Python standard library only):
+
+```
+python scripts/matrix_lookup.py --improve 25 --worsen 27
+python scripts/matrix_lookup.py --merge 25:27 39:27 25:33
+python scripts/matrix_lookup.py --find throughput
+python scripts/matrix_lookup.py --principle 10
+```
+
+Parameters can be ids or names/aliases. `--merge` ranks principles by how many
+cells name them. Add `--json` for machine-readable output.
+
+If you cannot run scripts, read the files in `data/` directly:
+- `contradiction-matrix.csv`: row = improving, column = worsening, cell =
+  principle ids separated by `;`.
+- `parameters.json`, `principles.json`: names, definitions, aliases, examples.
+- `separation.json`: separation principles for physical contradictions.
+- `matrix-status.json`: how far each cell is checked. The matrix is
+  cross-checked between two copies but not yet against the book, so say so if
+  the user relies on a single cell.
 
 ## State block
 
