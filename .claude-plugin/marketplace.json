@@ -1,0 +1,23 @@
+{
+  "name": "triz-skill",
+  "owner": {
+    "name": "magery.ai"
+  },
+  "metadata": {
+    "description": "TRIZ inventive problem solving for AI agents: contradictions, the 40 principles and the classic contradiction matrix.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "triz",
+      "description": "Structured inventive problem solving with TRIZ: finds the contradiction, maps it to inventive principles, turns them into concrete actions, validates with the user, and outputs a short and full plan.",
+      "version": "1.0.0",
+      "source": "./",
+      "strict": false,
+      "license": "MIT",
+      "homepage": "https://github.com/magery-ai/triz-skill",
+      "keywords": ["triz", "problem-solving", "innovation", "contradiction-matrix"],
+      "skills": ["./skills/triz"]
+    }
+  ]
+}
