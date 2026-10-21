@@ -80,6 +80,8 @@ example: *"Our pages need to be fast, but the cache shows stale prices."*
 |---|---|---|
 | [Support replies faster without sloppy answers](skills/triz/examples/business-support-speed-vs-quality.md) | Reply speed against answer reliability | Senior-owned macros plus split queues (#10, #1) |
 | [Fast product pages with fresh prices](skills/triz/examples/software-cache-vs-freshness.md) | Response time against data freshness | Purge on change from the admin tool, TTL as fallback (#24, #26) |
+| [Halve the inference bill without worse answers](skills/triz/examples/software-model-router.md) | Serving cost against answer reliability | Route easy ticket types to a small model, escalate doubtful answers (#35, #11) |
+| [OCR cost with LLM accuracy for invoices](skills/triz/examples/software-ocr-vs-llm.md) | Cost per page against extraction accuracy | OCR with supplier templates and field checks; LLM only where a check fails (#28, #34) |
 | [Longer wind turbine blades without the weight](skills/triz/examples/engineering-wind-turbine.md) | Blade length against blade weight | Carbon caps only in the outer 10 m plus bend-twist layout (#40, #15) |
 
 <details>
