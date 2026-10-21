@@ -54,7 +54,11 @@ obvious answer.
 If the user says "just give me options", ask at most one question, do one
 combined check for stages 1 and 2, and let them skip validation. If no human
 can answer (you are a subagent or stuck mid-task), answer the checks yourself
-and list every assumption you made.
+and list every assumption you made. Then give the caller enough engineering
+detail to act without redoing your work: break the metric into its parts and
+measure them first, order the steps from no-risk to risky (including obvious
+expert fixes no principle points to), show the path from today's number to the
+target with its margin, and say how to verify the change before switching.
 
 ## Short plan
 

@@ -4,7 +4,14 @@
 
 - A cell-by-cell check of the matrix against Altshuller's *40 Principles*
   (Shulyak and Rodman, 1997).
-- Improve autonomous output, where the baseline won 2 of 3 eval cases.
+- Autonomous mode gives the caller engineering depth: stage 1 breaks the
+  target metric into its parts and looks for a bottleneck the obvious fix
+  misses, and the returned message adds an execution section (measure first,
+  every lever from no-risk to risky, a path-to-target table with its margin,
+  verification before switching, deliverables). The 400-word cap is gone.
+  In a blind re-run of the 3 autonomous cases (5 runs), the skill was
+  preferred in 5 of 5, up from 1 of 3. Results in
+  `evals/results/2026-10-21-autonomous.md`.
 
 ## 1.1.0 (2026-10-21)
 

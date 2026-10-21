@@ -30,6 +30,20 @@ A1. <assumption>. Basis: <what made you think so, or "none">. Impact if wrong: <
 
 Write the IFR and resources as usual. Only list resources you can point to.
 
+### Break the metric down
+
+Before you look for the contradiction, split the number the caller wants to
+move into the parts that add up to it, the way a practitioner would on day
+one: where the 42 minutes of CI go (queue, setup, build, each test suite,
+the slowest single tests), which part of the 600 ms is queueing and which is
+work, which segment the lost sales come from. Give a rough figure for each
+part, mark it as an estimate or as read from context, and name the file,
+log or query that would measure it.
+
+Look for a bottleneck the obvious fix would not touch (a database behind the
+replicas, one test longer than any shard). If one exists, it goes into the
+plan, even if no principle points to it.
+
 ## Stage 2: pick the contradiction
 
 Write 2-3 candidates and rank them on:
@@ -69,28 +83,50 @@ option, or the best option overall if none survived, and lower the confidence.
 
 ## Output
 
-The caller is usually another agent that will act on your answer, so lead
-with what it can do, and keep the analysis in the full plan.
+The caller is usually another agent that will carry out your answer without
+asking anything. Give it enough engineering detail to do the work: an
+experienced engineer handed the message should not have to redo your
+analysis. Lead with what to do, and keep the TRIZ analysis in the full plan.
 
 Write both plans as in `workflow/6-plan.md`, with the Assumptions section and
-the confidence level filled in. Return this to the caller, in this order and
-in about 400 words or fewer:
+the confidence level filled in. Return this to the caller, in this order:
 
 1. **Confidence**, and "Needs human review" if it is low.
-2. **The short plan.** Make the first steps executable as written: name the
-   files, commands, config keys or queries to run, and the order to run them.
-   If a step depends on an unverified assumption, make checking it the first
-   step.
-3. **Safety fallback:** what to do if a step makes things worse (how to roll
+2. **The short plan** (`templates/plan-short.md`), with all three required
+   fields. In autonomous mode the next steps may run past 5 when the work
+   needs them.
+3. **Execution detail.** This is where the plan earns its keep:
+   - **Measure first.** The breakdown from stage 1 as a step: what to read
+     or run, what to compute, and which number decides between branches of
+     the plan ("if e2e is under 15 of the 42 minutes, skip step 4").
+   - **Every lever, cheapest first.** Order the steps from no-risk to risky.
+     Include the expert levers from stage 4 that the principles did not point
+     to (caching, fixing the slowest few tests, query fixes, quarantining
+     flaky tests) when they move the target. Name the files, commands,
+     config keys, tools or queries for each step.
+   - **Path to target.** A small table from today's value to the target:
+     each step, its estimated effect and what the estimate rests on. Show the
+     margin at the end. If the plan only just reaches the target (less than
+     about 20% headroom), add the next lever or say plainly that the margin
+     is thin.
+   - **Verify before switching.** How the caller proves the change works
+     before it becomes the default: a shadow run beside the old setup, a
+     canary, a dry run, a holdout. Say what result counts as a pass.
+   - **Deliverables:** the files, PRs or reports the caller should produce.
+4. **Safety fallback:** what to do if a step makes things worse (how to roll
    back or what to keep running).
-4. **Assumptions** with high impact, one line each.
-5. **Critic pass**, in one line: that all six question types were answered,
+5. **Assumptions** with high impact, one line each, and the step that checks
+   each one.
+6. **Critic pass**, in one line: that all six question types were answered,
    and what the pass changed or rejected.
-6. The path of the full plan.
+7. The path of the full plan.
 
-Leave the contradiction ranking, matrix lookups and critic log out of the
-returned message; they belong in the full plan. If you cannot write files,
-put them after the six parts above under "Analysis".
+Length follows the work: a plan with real engineering steps usually runs
+700-1,200 words; a low-confidence plan with little context can be shorter.
+Do not pad, and do not cut a step the caller needs to act. Leave the
+contradiction ranking, matrix lookups and critic log out of the returned
+message; they belong in the full plan. If you cannot write files, put them
+after the seven parts above under "Analysis".
 
 If confidence is **low**, put "Needs human review" at the top of both plans and
 do not act on the plan yourself, even if the caller allowed it. Tell the caller
