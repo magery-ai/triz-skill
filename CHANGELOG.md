@@ -8,6 +8,9 @@
 
 ## Unreleased
 
+- `agents/AGENTS.md`: a compact rules-file version of the workflow for
+  agents that can't load skills, reading the matrix from this repository.
+  Linked from README and INSTALL.md, with a test that its links resolve.
 - README rebuilt around a short first screen: logo, one-line promise, badges,
   a before/after image, install near the top with an "ask your agent" line,
   an example table with the full session collapsed, a stage diagram, a modes
