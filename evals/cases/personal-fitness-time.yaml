@@ -1,0 +1,20 @@
+id: personal-fitness-time
+domain: personal
+mode: fast
+prompt: |
+  I want to get fit, but I have no free time between work and kids. Just give
+  me options.
+persona: |
+  You are a parent of two who works 9 to 6 with a 40-minute commute by car.
+  The office is 9 km away and has a shower. You want options quickly and will
+  skip validation if offered. You accept "more fitness worsens free time".
+expected_contradictions:
+  - improving: 14 Strength
+    worsening: 25 Loss of time
+    principles: [29, 3, 28, 10]
+  - improving: 15 Duration of action of moving object
+    worsening: 25 Loss of time
+    principles: [20, 10, 28, 18]
+checks:
+  - 'Runs fast mode: one combined check, offers to skip validation.'
+  - 'Uses the commute or the office shower as a resource (#20 Continuity of useful action).'

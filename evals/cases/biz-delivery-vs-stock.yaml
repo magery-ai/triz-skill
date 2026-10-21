@@ -1,0 +1,20 @@
+id: biz-delivery-vs-stock
+domain: business
+mode: guided
+prompt: |
+  Customers want next-day delivery, but holding enough stock for that ties up
+  cash we don't have.
+persona: |
+  You run operations for a furniture retailer. Lead time is 10 days. 30 of 400
+  products make 70% of sales. A supplier 2 hours away could hold stock for a
+  fee. You accept "faster delivery worsens the amount of stock held".
+expected_contradictions:
+  - improving: 25 Loss of time
+    worsening: 26 Quantity of substance
+    principles: [35, 38, 18, 16]
+  - improving: 39 Productivity
+    worsening: 26 Quantity of substance
+    principles: [35, 38]
+checks:
+  - 'Segments by product (fast movers only) or uses the nearby supplier as a resource.'
+  - 'Mentions #16 Partial or excessive actions or #35 Parameter changes in concrete terms.'

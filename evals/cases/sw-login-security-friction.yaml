@@ -1,0 +1,17 @@
+id: sw-login-security-friction
+domain: software
+mode: guided
+prompt: |
+  We need stronger login security after an account takeover, but every extra
+  step makes more users abandon sign-in.
+persona: |
+  You are a product manager for a consumer app with 2 million users. Sign-in
+  drop-off rose from 4% to 11% when you tried mandatory 2FA. Most users log in
+  from the same phone. You accept "stronger security worsens ease of use".
+expected_contradictions:
+  - improving: 30 External harm affects the object
+    worsening: 33 Ease of operation
+    principles: [2, 25, 28, 39]
+checks:
+  - 'Separates by condition (extra steps only for risky sign-ins).'
+  - 'Uses the known-device signal as a resource (#25 Self-service or #28 Mechanics substitution).'

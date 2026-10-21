@@ -1,0 +1,17 @@
+id: eng-airbag-inflation
+domain: engineering
+mode: guided
+prompt: |
+  Airbags have to inflate in milliseconds, but the force of fast inflation
+  injures small or out-of-position passengers.
+persona: |
+  You are a safety engineer at a car supplier. Inflation must finish in under
+  30 ms. Sensors for seat weight already exist in the car. You accept "faster
+  inflation worsens harm to the passenger".
+expected_contradictions:
+  - improving: 9 Speed
+    worsening: 31 Object-generated harmful factors
+    principles: [2, 24, 35, 21]
+checks:
+  - 'Uses the existing seat-weight sensors as a resource.'
+  - 'Considers #35 Parameter changes (staged or variable inflation) or separation by condition.'

@@ -1,0 +1,17 @@
+id: sw-config-flexibility
+domain: software
+mode: guided
+prompt: |
+  Every customer wants their own settings, and each new option makes the code
+  harder to change and test.
+persona: |
+  You are the tech lead of a B2B SaaS team of 6. There are 140 feature flags,
+  half of them used by one customer each. Tests take 50 minutes. You accept
+  "more configurability worsens code complexity".
+expected_contradictions:
+  - improving: 35 Adaptability or versatility
+    worsening: 36 Device complexity
+    principles: [15, 29, 37, 28]
+checks:
+  - 'Asks what must not change before proposing removals.'
+  - 'Considers #15 Dynamics (options resolved at runtime through a small set of profiles) or #28 Mechanics substitution.'
