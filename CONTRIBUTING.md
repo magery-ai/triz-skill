@@ -12,6 +12,29 @@ eval cases are the most useful contributions.
 - Run the tests before opening a pull request:
   `python -m unittest discover -s evals/tests`.
 
+## Repository layout
+
+```
+skills/triz/
+├── SKILL.md            # trigger, rules, stage map, modes, state block
+├── workflow/           # one file per stage, plus autonomous.md
+├── guides/             # domain-mapping.md: software, business, personal terms
+├── templates/          # plan-short.md, plan-full.md
+├── data/               # parameters, principles, matrix, separation, check status
+├── scripts/            # matrix_lookup.py (standard library only)
+└── examples/           # worked examples, plus TEMPLATE.md
+.claude-plugin/         # marketplace.json for Claude Code
+tools/build_zip.py      # builds the Claude.ai release zip
+evals/
+├── cases/              # 13 scenario cases (10 guided or fast, 3 autonomous)
+├── triggers.yaml       # should / should-not trigger prompts
+├── rubric.md           # how to grade a run
+└── tests/              # data, script, structure and case tests, run in CI
+```
+
+Run the tests with `python -m unittest discover -s evals/tests`. See
+[`evals/README.md`](evals/README.md) for trigger tests and scenario evals.
+
 ## Add a worked example
 
 1. Copy `skills/triz/examples/TEMPLATE.md` to
