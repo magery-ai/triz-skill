@@ -7,9 +7,9 @@ and the classic Altshuller contradiction matrix to find solution directions,
 turns them into actions that fit your situation, checks them with you, and
 hands back a short plan and a full one.
 
-> **Status: v0.4 evals and examples.** The workflow, data, lookup script,
-> scenario evals and three worked examples are in. The matrix is cross-checked
-> between two copies; see the [roadmap](#roadmap) for what comes next.
+> **Status: v1.0.** Workflow, data, lookup script, evals and worked examples
+> are in. The matrix is cross-checked between two independent copies but not
+> yet against the book; see [Sources](#sources).
 
 ## What a session looks like
 
@@ -92,7 +92,18 @@ The principles come from the matrix cells 25x27 (#10, #30, #4) and 39x27
 
 ## Install
 
-With the [skills CLI](https://skills.sh):
+**Claude Code** (plugin marketplace):
+
+```
+/plugin marketplace add magery-ai/triz-skill
+/plugin install triz@triz-skill
+```
+
+**Claude.ai:** download `triz-skill-<version>.zip` from the
+[latest release](https://github.com/magery-ai/triz-skill/releases/latest) and
+upload it under Settings > Capabilities > Skills.
+
+**Any agent** with the [skills CLI](https://skills.sh):
 
 ```bash
 npx skills add magery-ai/triz-skill --skill triz
@@ -105,9 +116,6 @@ skills folder):
 git clone https://github.com/magery-ai/triz-skill
 cp -r triz-skill/skills/triz ~/.claude/skills/
 ```
-
-A Claude Code plugin marketplace entry (`/plugin marketplace add
-magery-ai/triz-skill`) and a release zip for Claude.ai come with v1.0.
 
 ## How it works
 
@@ -142,6 +150,8 @@ skills/triz/
 ├── data/               # parameters, principles, matrix, separation, check status
 ├── scripts/            # matrix_lookup.py (standard library only)
 └── examples/           # worked examples, plus TEMPLATE.md
+.claude-plugin/         # marketplace.json for Claude Code
+tools/build_zip.py      # builds the Claude.ai release zip
 evals/
 ├── cases/              # 13 scenario cases (10 guided or fast, 3 autonomous)
 ├── triggers.yaml       # should / should-not trigger prompts
@@ -167,9 +177,11 @@ issue.
 - **v0.3 Workflow:** full stage files, domain-mapping guide for non-engineering
   problems, Socratic question bank.
 - **v0.4 Evals and examples:** scenario evals, trigger tests, worked examples.
-  *(this release)*
-- **v1.0 Release:** matrix verified against Altshuller's *40 Principles*
-  (Shulyak and Rodman, 1997), plugin marketplace entry, release zip.
+- **v1.0 Release:** plugin marketplace entry, release zip, matrix status
+  documented. *(this release)*
+
+Next: a cell-by-cell check of the matrix against Altshuller's *40 Principles*
+(Shulyak and Rodman, 1997), and recorded with/without eval runs.
 
 ## Sources
 
@@ -180,8 +192,13 @@ project's own words and format.
 Matrix values come from the [triz40.com](https://www.triz40.com/aff_Matrix_TRIZ.php)
 online matrix (Source: TRIZ40 - www.triz40.com), cross-checked cell by cell
 against a second copy. Differences are logged in
-`skills/triz/data/matrix-discrepancies.md`. The primary reference for the
-v1.0 check is Altshuller's *40 Principles* (Shulyak and Rodman, 1997).
+`skills/triz/data/matrix-discrepancies.md`. The two copies agree on every
+cell but one. The cells have **not** yet been checked against the primary
+reference, Altshuller's *40 Principles* (Shulyak and Rodman, 1997);
+`skills/triz/data/matrix-status.json` tracks each cell's status. If you have
+the book and find a difference, please open a
+[Wrong matrix cell](https://github.com/magery-ai/triz-skill/issues/new?template=wrong-matrix-cell.yml)
+issue.
 
 ## License
 

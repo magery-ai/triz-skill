@@ -22,7 +22,8 @@
         "role": "Cross-check copy. Its origin is not documented, so it may share an ancestor with triz40.com."
       }
     ],
-    "primary_source": "Altshuller, G. 40 Principles: TRIZ Keys to Technical Innovation. Translated by L. Shulyak and S. Rodman. Technical Innovation Center, 1997. Not yet checked; planned for v1.0."
+    "primary_source": "Altshuller, G. 40 Principles: TRIZ Keys to Technical Innovation. Translated by L. Shulyak and S. Rodman. Technical Innovation Center, 1997. Not yet checked.",
+    "release_note": "v1.0.0 ships with the two-copy cross-check only. A cell-by-cell check against the book is still open; report a wrong cell with the 'Wrong matrix cell' issue form."
   },
   "cells": {}
 }
