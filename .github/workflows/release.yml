@@ -3,6 +3,7 @@ name: release
 on:
   push:
     tags: ["v*.*.*"]
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -17,10 +18,13 @@ jobs:
           python-version: "3.13"
       - name: Tests
         run: python -m unittest discover -s evals/tests -v
-      - name: Check tag matches version
+      - name: Resolve the tag
         run: |
           version=$(python -c "import json; print(json.load(open('.claude-plugin/marketplace.json'))['metadata']['version'])")
-          test "v$version" = "$GITHUB_REF_NAME"
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            test "v$version" = "$GITHUB_REF_NAME"
+          fi
+          echo "TAG=v$version" >> "$GITHUB_ENV"
       - name: Build zip
         run: python tools/build_zip.py --out dist
       - name: Release notes from CHANGELOG
@@ -28,11 +32,11 @@ jobs:
           python - <<'PY'
           import os, re
           text = open("CHANGELOG.md", encoding="utf-8").read()
-          version = os.environ["GITHUB_REF_NAME"].lstrip("v")
+          version = os.environ["TAG"].lstrip("v")
           match = re.search(rf"^## {re.escape(version)}\b.*?\n(.*?)(?=^## |\Z)", text, re.M | re.S)
           open("notes.md", "w", encoding="utf-8").write(match.group(1).strip() + "\n")
           PY
       - name: Create release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" dist/*.zip --title "$GITHUB_REF_NAME" --notes-file notes.md
+        run: gh release create "$TAG" dist/*.zip --target "$GITHUB_SHA" --title "$TAG" --notes-file notes.md
