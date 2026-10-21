@@ -8,8 +8,8 @@ turns them into actions that fit your situation, checks them with you, and
 hands back a short plan and a full one.
 
 > **Status: v1.0.** Workflow, data, lookup script, evals and worked examples
-> are in. The matrix is cross-checked between two independent copies but not
-> yet against the book; see [Sources](#sources).
+> are in. The matrix is cross-checked against three copies but not yet
+> against the book; see [Sources](#sources).
 
 ## What a session looks like
 
@@ -192,8 +192,11 @@ project's own words and format.
 Matrix values come from the [triz40.com](https://www.triz40.com/aff_Matrix_TRIZ.php)
 online matrix (Source: TRIZ40 - www.triz40.com), cross-checked cell by cell
 against a second copy. Differences are logged in
-`skills/triz/data/matrix-discrepancies.md`. The two copies agree on every
-cell but one. The cells have **not** yet been checked against the primary
+`skills/triz/data/matrix-discrepancies.md`. A third copy with a documented
+origin, the table on the [G.S. Altshuller Foundation](https://www.altshuller.ru/triz/technique2.asp)
+site (from Altshuller's *Algorithm of Invention*, 1973), agrees on 1,492 of
+1,521 cells; the 29 cells where it differs are marked `disputed`, and the
+lookup script says so. The cells have **not** yet been checked against the primary
 reference, Altshuller's *40 Principles* (Shulyak and Rodman, 1997);
 `skills/triz/data/matrix-status.json` tracks each cell's status. If you have
 the book and find a difference, please open a

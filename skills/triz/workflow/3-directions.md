@@ -35,9 +35,11 @@ cell = principle ids separated by `;`, in the matrix's own order.
   worsening).
 - The **diagonal** is always empty: the same parameter on both sides is a
   physical contradiction. Use separation below.
-- Check the cell's status in the output. All cells are currently
-  "cross-checked" (two copies agree) but not checked against the book. If the
-  user will rely on one cell, say so.
+- Check the cell's status in the output. Most cells are "cross-checked":
+  three copies agree, but none has been checked against the book. A
+  "disputed" cell has a different value in the 1973 Altshuller table; look it
+  up in `data/matrix-discrepancies.md`, tell the user both values, and
+  consider principles from both.
 
 ### 3. Merge when the mapping is uncertain
 

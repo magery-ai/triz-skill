@@ -17,5 +17,5 @@ expected_contradictions:
     principles: [1, 28, 35, 23]
 checks:
   - 'Finds the physical contradiction: the bend wall must be hit by grit and not be hit by it.'
-  - 'Offers #22 Blessing in disguise or #24 Intermediary (a layer of the grit itself protecting the wall).'
+  - 'Offers #22 Blessing in disguise (a layer of the grit itself protecting the wall), and says the 39x30 cell is disputed.'
   - 'Does not propose a new line layout.'
