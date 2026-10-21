@@ -63,6 +63,7 @@ Aim for a finished plan in about 5-8 user turns in guided mode.
 |-------|--------------------|------|
 | 1 Intake | 2 clarifying questions | Confirm the restatement |
 | 2 Contradiction | 0 extra | Pick or correct the contradiction |
+| 3 Directions | 1, only when the matrix cell is empty both ways | Confirm the neighbour parameter |
 | 5 Validation | 2 Socratic questions | Approve an option |
 
 - **Merge gates that have nothing to resolve.** If intake left no open

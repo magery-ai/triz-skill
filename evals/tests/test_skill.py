@@ -65,7 +65,7 @@ class DomainMappingTest(unittest.TestCase):
                  json.loads(read("data/parameters.json"))["parameters"]}
         rows = [line for line in read("guides/domain-mapping.md").splitlines()
                 if line.startswith("|") and not line.startswith("|--")
-                and not line.startswith("| Term")]
+                and not line.startswith(("| Term", "| Parameter"))]
         self.assertGreater(len(rows), 50)
         for row in rows:
             cell = row.split("|")[2].strip()
@@ -73,6 +73,36 @@ class DomainMappingTest(unittest.TestCase):
             self.assertTrue(refs, row)
             for pid, name in refs:
                 self.assertEqual(names.get(int(pid)), name.strip(), row)
+
+    def matrix(self):
+        cells = {}
+        rows = [line.split(",") for line in read("data/contradiction-matrix.csv").splitlines()]
+        for row in rows[1:]:
+            for col, cell in zip(rows[0][1:], row[1:]):
+                cells[(int(row[0]), int(col))] = cell
+        return cells
+
+    def test_worked_merges_use_filled_cells(self):
+        cells = self.matrix()
+        merges = re.findall(r"`--merge ([\d: ]+)`", read("guides/domain-mapping.md"))
+        self.assertTrue(merges)
+        for pair in re.findall(r"(\d+):(\d+)", " ".join(merges)):
+            a, b = map(int, pair)
+            self.assertTrue(cells[(a, b)] or cells[(b, a)], f"{a}:{b} is empty both ways")
+
+    def test_populated_and_empty_lists_match_matrix(self):
+        cells = self.matrix()
+        section = read("guides/domain-mapping.md").split("## Cost, speed and quality", 1)[1]
+        section = section.split("\n## ", 1)[0]
+        for line in section.split("\n- ")[1:]:
+            pairs = [tuple(map(int, p)) for p in re.findall(r"(\d+):(\d+)", line)]
+            for a, b in pairs:
+                filled = bool(cells[(a, b)]) and bool(cells[(b, a)])
+                empty = not cells[(a, b)] and not cells[(b, a)]
+                if line.startswith("**Empty"):
+                    self.assertTrue(empty, f"{a}:{b} listed as empty")
+                else:
+                    self.assertTrue(filled, f"{a}:{b} listed as populated")
 
 
 class SocraticBankTest(unittest.TestCase):

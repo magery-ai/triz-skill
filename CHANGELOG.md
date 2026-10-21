@@ -1,5 +1,19 @@
 # Changelog
 
+## Unreleased
+
+- Domain mapping: software "serving cost" (cost per request, inference bill)
+  now maps to 23 Loss of substance instead of 32 Ease of manufacture, which is
+  empty against 27 Reliability in both directions. New rows for serving cost
+  and model answer quality, a list of populated and empty cost/speed vs
+  quality pairs, a neighbours table for empty cells, and a worked "cheaper
+  inference vs reliable answers" mapping.
+- Explicit empty-cell rule in stage 3: reverse cell, say it plainly,
+  closest neighbour (confirmed in guided mode, stated in fast mode, an
+  assumption in autonomous mode), then separation only. The question budget
+  allows this one stage 3 question.
+- Tests that worked merges and the populated/empty lists match the matrix.
+
 ## 1.1.0 (2026-10-21)
 
 - Required plan fields: every short and full plan, in every mode, now has

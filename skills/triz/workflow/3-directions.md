@@ -30,9 +30,8 @@ python scripts/matrix_lookup.py --improve <A> --worsen <B>
 Or read `data/contradiction-matrix.csv`: row = improving, column = worsening,
 cell = principle ids separated by `;`, in the matrix's own order.
 
-- An **empty cell** means the matrix has no suggestion for that pair. Try the
-  next-closest parameter for A or B, or the reverse cell (B improving, A
-  worsening).
+- An **empty cell** means the matrix has no suggestion for that pair. Follow
+  the empty-cell rule below.
 - The **diagonal** is always empty: the same parameter on both sides is a
   physical contradiction. Use separation below.
 - Check the cell's status in the output. Most cells are "cross-checked":
@@ -40,6 +39,31 @@ cell = principle ids separated by `;`, in the matrix's own order.
   "disputed" cell has a different value in the 1973 Altshuller table; look it
   up in `data/matrix-discrepancies.md`, tell the user both values, and
   consider principles from both.
+
+### Empty-cell rule
+
+When the cell is empty, work through these steps in order and stop at the
+first one that gives principles:
+
+1. **Reverse.** Read the reverse cell (B improving, A worsening). If it has
+   principles, use them and say so: "The direct cell is empty; the reverse
+   cell gives ...".
+2. **Say it plainly.** If both are empty, tell the user: "The matrix has no
+   principles for <A id name> vs <B id name>, in either direction."
+3. **Neighbour.** Swap one side for its closest neighbour from
+   `guides/domain-mapping.md` (Neighbours for empty cells), and read the
+   direct and reverse cells again. Change one side at a time, and keep a
+   neighbour only if it still describes the user's problem.
+   - Guided: ask in one line, "Shall I read cost as 23 Loss of substance
+     (money spent while running) instead? That cell has principles." This is
+     the only question stage 3 may ask.
+   - Fast: state the swap in one line and go on.
+   - Autonomous: make the swap and record it as an assumption.
+4. **Separation only.** If no neighbour fits, or every fitting cell is empty,
+   take the directions from separation alone and say so in the output.
+
+Never invent principles for an empty cell, and never fill it from a
+neighbour without saying which neighbour you used.
 
 ### 3. Merge when the mapping is uncertain
 
@@ -84,6 +108,8 @@ but do not stretch an analogy past what the user would find natural.
 
 ```
 Matrix: improving <id name> vs worsening <id name> -> #a, #b, #c, #d [status]
+  (or: empty both ways; neighbour <id name> -> #a, #b [status])
+  (or: empty both ways and for neighbours; directions from separation only)
 Separation: <type>, because <reason>
 Directions:
 1. #<n> <name>: <why it fits, in the user's terms>
