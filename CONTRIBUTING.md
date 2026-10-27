@@ -25,6 +25,8 @@ skills/triz/
 └── examples/           # worked examples, plus TEMPLATE.md
 .claude-plugin/         # marketplace.json for Claude Code
 tools/build_zip.py      # builds the Claude.ai release zip
+tools/build_site.py     # builds the online matrix from site/ and data/
+site/                   # online matrix page, deployed by pages.yml
 evals/
 ├── cases/              # 13 scenario cases (10 guided or fast, 3 autonomous)
 ├── triggers.yaml       # should / should-not trigger prompts
