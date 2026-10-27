@@ -23,7 +23,7 @@ skills/triz/
 ├── data/               # parameters, principles, matrix, separation, check status
 ├── scripts/            # matrix_lookup.py (standard library only)
 └── examples/           # worked examples, plus TEMPLATE.md
-.claude-plugin/         # marketplace.json for Claude Code
+.claude-plugin/         # marketplace.json, plugin.json and icon for Claude Code
 tools/build_zip.py      # builds the Claude.ai release zip
 tools/build_site.py     # builds the online matrix from site/ and data/
 site/                   # online matrix page, deployed by pages.yml

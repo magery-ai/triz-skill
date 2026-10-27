@@ -6,6 +6,12 @@
   39 blind comparisons). With the skill: 123.3 of 124 items on average and
   preferred in 38 of 39 comparisons; without: 71 of 124. README Results,
   chart and `evals/results/2026-10-21-multirun.md` updated.
+- Free online contradiction matrix at https://magery-ai.github.io/triz-skill/,
+  built from `skills/triz/data` by `tools/build_site.py`.
+- `.claude-plugin/plugin.json` and a listing icon, for the Claude plugin
+  directory. The marketplace entry is now `strict`, and the plugin no longer
+  loads `agents/AGENTS.md` as a Claude Code subagent. Bump the version in
+  `plugin.json` too when releasing.
 
 ## Next
 
