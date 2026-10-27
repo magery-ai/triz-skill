@@ -12,6 +12,8 @@
   directory. The marketplace entry is now `strict`, and the plugin no longer
   loads `agents/AGENTS.md` as a Claude Code subagent. Bump the version in
   `plugin.json` too when releasing.
+- `agents/AGENTS.md` moved to `portable/AGENTS.md`, so the plugin directory
+  no longer checks it as a Claude agent.
 
 ## Next
 
