@@ -22,11 +22,19 @@ class MarketplaceTest(unittest.TestCase):
     def setUpClass(cls):
         with open(ROOT / ".claude-plugin" / "marketplace.json", encoding="utf-8") as f:
             cls.data = json.load(f)
+        with open(ROOT / ".claude-plugin" / "plugin.json", encoding="utf-8") as f:
+            cls.manifest = json.load(f)
 
     def test_skill_paths_exist(self):
-        for plugin in self.data["plugins"]:
-            for skill in plugin["skills"]:
-                self.assertTrue((ROOT / skill / "SKILL.md").exists(), skill)
+        self.assertTrue((ROOT / "skills" / "triz" / "SKILL.md").exists())
+
+    def test_plugin_manifest_matches_marketplace(self):
+        entry = self.data["plugins"][0]
+        self.assertTrue(entry["strict"])
+        self.assertEqual(self.manifest["name"], entry["name"])
+        self.assertEqual(self.manifest["version"], self.data["metadata"]["version"])
+        # agents/AGENTS.md is for other tools, not a Claude Code subagent.
+        self.assertEqual(self.manifest["agents"], [])
 
     def test_versions_agree_with_changelog(self):
         version = self.data["metadata"]["version"]

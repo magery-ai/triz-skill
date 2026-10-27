@@ -1,0 +1,19 @@
+{
+  "name": "triz",
+  "version": "1.2.0",
+  "description": "Structured inventive problem solving with TRIZ: finds the contradiction, maps it to inventive principles, turns them into concrete actions, validates with the user, and outputs a short and full plan.",
+  "author": {
+    "name": "magery.ai",
+    "url": "https://github.com/magery-ai"
+  },
+  "homepage": "https://magery-ai.github.io/triz-skill/",
+  "repository": "https://github.com/magery-ai/triz-skill",
+  "license": "MIT",
+  "keywords": [
+    "triz",
+    "problem-solving",
+    "innovation",
+    "contradiction-matrix"
+  ],
+  "agents": []
+}
