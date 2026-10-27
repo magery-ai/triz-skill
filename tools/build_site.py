@@ -93,7 +93,6 @@ PAGE = """<!doctype html>
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{description}">
 <meta property="og:url" content="{url}">
-<meta property="og:image" content="{base}social-preview.png">
 <link rel="icon" href="../logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../style.css">
 </head>
@@ -164,7 +163,6 @@ def principle_page(p, data, by_id):
             f"{first_example}"
         ),
         url=BASE_URL + p["page"],
-        base=BASE_URL,
         repo=REPO_URL,
         id=p["id"],
         name=name,
@@ -189,7 +187,6 @@ def build(out_dir):
     shutil.copytree(SITE, out)
     shutil.copy(ROOT / "assets" / "logo-light.svg", out / "logo.svg")
     shutil.copy(ROOT / "assets" / "logo-dark.svg", out / "logo-dark.svg")
-    shutil.copy(ROOT / "assets" / "social-preview.png", out / "social-preview.png")
     data = site_data()
     index = out / "index.html"
     items = "\n".join(
