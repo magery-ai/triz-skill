@@ -68,7 +68,7 @@ npx skills add magery-ai/triz-skill --skill triz
 ```
 
 **Agents without skill support** (Cursor rules, Copilot, Windsurf, Cline):
-copy [`agents/AGENTS.md`](agents/AGENTS.md) into your project.
+copy [`portable/AGENTS.md`](portable/AGENTS.md) into your project.
 
 Manual install and other options are in [INSTALL.md](INSTALL.md).
 

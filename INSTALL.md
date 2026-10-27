@@ -53,7 +53,7 @@ for where it is.
 
 For agents that read a rules file but can't load skills (Cursor rules,
 GitHub Copilot instructions, Windsurf, Cline, or any `AGENTS.md`), copy
-[`agents/AGENTS.md`](agents/AGENTS.md) into your project, or paste its
+[`portable/AGENTS.md`](portable/AGENTS.md) into your project, or paste its
 contents into your agent's rules file. It is a compact version of the
 workflow that reads the matrix from this repository.
 

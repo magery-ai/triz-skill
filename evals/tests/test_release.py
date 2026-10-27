@@ -33,7 +33,7 @@ class MarketplaceTest(unittest.TestCase):
         self.assertTrue(entry["strict"])
         self.assertEqual(self.manifest["name"], entry["name"])
         self.assertEqual(self.manifest["version"], self.data["metadata"]["version"])
-        # agents/AGENTS.md is for other tools, not a Claude Code subagent.
+        # The plugin ships no subagents; portable/AGENTS.md is for other tools.
         self.assertEqual(self.manifest["agents"], [])
 
     def test_versions_agree_with_changelog(self):
@@ -67,12 +67,12 @@ class CompactRulesTest(unittest.TestCase):
     RAW = "https://raw.githubusercontent.com/magery-ai/triz-skill/main/"
 
     def test_raw_links_point_to_real_files(self):
-        text = (ROOT / "agents" / "AGENTS.md").read_text(encoding="utf-8")
+        text = (ROOT / "portable" / "AGENTS.md").read_text(encoding="utf-8")
         links = re.findall(re.escape(self.RAW) + r"(\S+)", text)
         self.assertTrue(links)
         for rel in links:
             self.assertTrue((ROOT / rel).exists(), rel)
 
     def test_short(self):
-        text = (ROOT / "agents" / "AGENTS.md").read_text(encoding="utf-8")
+        text = (ROOT / "portable" / "AGENTS.md").read_text(encoding="utf-8")
         self.assertLess(len(text.splitlines()), 120)
