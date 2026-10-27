@@ -11,7 +11,7 @@ on:
       - "site/**"
       - "skills/triz/data/**"
       - "tools/build_site.py"
-      - "assets/**"
+      - "assets/logo-*.svg"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
