@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRIZ contradiction matrix online, with the 40 principles</title>
+<meta name="description" content="Free online TRIZ contradiction matrix: pick what you want to improve and what gets worse, and see which of Altshuller's 40 inventive principles apply, with examples from software, business and engineering.">
+<link rel="canonical" href="https://magery-ai.github.io/triz-skill/">
+<meta property="og:title" content="TRIZ contradiction matrix online">
+<meta property="og:description" content="Pick what you want to improve and what gets worse. See which of the 40 inventive principles apply, with examples from software, business and engineering.">
+<meta property="og:url" content="https://magery-ai.github.io/triz-skill/">
+<meta property="og:image" content="https://magery-ai.github.io/triz-skill/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><a class="brand" href="./"><picture><source media="(prefers-color-scheme: dark)" srcset="logo-dark.svg"><img src="logo.svg" alt="" width="28" height="28"></picture>TRIZ contradiction matrix</a>
+<a class="gh" href="https://github.com/magery-ai/triz-skill">GitHub</a></header>
+<main>
+<section class="hero">
+<h1>Improve one thing without making another worse</h1>
+<p class="lede">Altshuller's contradiction matrix lists which inventive
+principles solved each kind of conflict in thousands of patents. Pick the
+parameter you want to improve and the one that gets worse.</p>
+</section>
+
+<section class="picker" aria-label="Matrix lookup">
+<label>I want to improve
+<input id="improve" list="params" placeholder="e.g. speed, reliability, weight" autocomplete="off">
+</label>
+<button id="swap" type="button" title="Swap" aria-label="Swap the two parameters">&#8646;</button>
+<label>but this gets worse
+<input id="worsen" list="params" placeholder="e.g. loss of time, cost, complexity" autocomplete="off">
+</label>
+<datalist id="params"></datalist>
+</section>
+
+<section id="result" aria-live="polite"></section>
+
+<aside class="cta">
+<h2>Let your agent do the whole method</h2>
+<p>The <a href="https://github.com/magery-ai/triz-skill">TRIZ skill</a> is a
+free, open-source skill for Claude Code, Claude.ai and other AI agents. You
+describe a problem in plain words; the agent finds the contradiction, looks it
+up in this matrix, turns the principles into steps that use what you already
+have, checks them with you and ends with a plan that has a metric, a date and
+a risk threshold.</p>
+<pre><code>/plugin marketplace add magery-ai/triz-skill
+/plugin install triz@triz-skill</code></pre>
+<p class="small">Other agents: <code>npx skills add magery-ai/triz-skill --skill triz</code>.
+Claude.ai: upload the zip from the <a href="https://github.com/magery-ai/triz-skill/releases/latest">latest release</a>.</p>
+</aside>
+
+<section id="principles">
+<h2>The 40 inventive principles</h2>
+<ol class="plist">
+<!--PRINCIPLES-->
+</ol>
+</section>
+
+<section class="about">
+<h2>About this matrix</h2>
+<p>This is the classic 1971 39 &times; 39 matrix. Values come from
+<a href="https://www.triz40.com/aff_Matrix_TRIZ.php">triz40.com</a>,
+cross-checked cell by cell against a second copy and against the 1973 table
+on the <a href="https://www.altshuller.ru/triz/technique2.asp">G.S. Altshuller
+Foundation</a> site. The copies agree on 1,492 of 1,521 cells; the other 29
+are marked <em>disputed</em> and show both values. Descriptions and examples
+are written in this project's own words. Found a wrong cell?
+<a href="https://github.com/magery-ai/triz-skill/issues/new?template=wrong-matrix-cell.yml">Report it</a>.</p>
+<p>How to read a result: the principles are listed in the matrix's order,
+and the first ones are the most frequent in the patents behind the cell. An
+empty cell means the matrix has no suggestion; try a nearby parameter, or
+treat it as a physical contradiction and separate the two needs in time,
+space or condition.</p>
+</section>
+</main>
+<footer>MIT licensed &middot; <a href="https://github.com/magery-ai/triz-skill">magery-ai/triz-skill</a></footer>
+<script src="app.js"></script>
+</body>
+</html>

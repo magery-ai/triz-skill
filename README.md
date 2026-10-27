@@ -25,7 +25,8 @@
   <a href="#see-it-work">Example</a> ·
   <a href="#how-it-works">How it works</a> ·
   <a href="#results">Results</a> ·
-  <a href="#faq">FAQ</a>
+  <a href="#faq">FAQ</a> ·
+  <a href="https://magery-ai.github.io/triz-skill/">Online matrix</a>
 </p>
 
 <p align="center">
@@ -70,6 +71,10 @@ npx skills add magery-ai/triz-skill --skill triz
 copy [`agents/AGENTS.md`](agents/AGENTS.md) into your project.
 
 Manual install and other options are in [INSTALL.md](INSTALL.md).
+
+**Just want the matrix?** The same data is browsable as a free
+[online contradiction matrix](https://magery-ai.github.io/triz-skill/), with
+a page for each of the 40 principles.
 
 Then describe a problem where improving one thing makes another worse, for
 example: *"Our pages need to be fast, but the cache shows stale prices."*
